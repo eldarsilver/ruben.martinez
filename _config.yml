@@ -6,7 +6,7 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: Rubén Martínez Sánchez
+title: Ruben Martinez Sanchez
 description: Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let's share!
 github_username: eldarsilver
 # you can comment the below line out if your repo name is not different than your baseurl
@@ -38,6 +38,7 @@ baseurl: "/ruben.martinez" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
+  skin: dark
   social_links:
     twitter: eldarsilver
     github: eldarsilver
