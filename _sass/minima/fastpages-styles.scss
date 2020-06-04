@@ -22,7 +22,7 @@ img.emoji{
 }
 
 .page-content {
-        background-color: #0f99a8 !important;
+        background-color: #17a2b8 !important;
         -webkit-font-smoothing: antialiased !important;
         text-rendering: optimizeLegibility !important;
         color: white !important;
@@ -103,17 +103,18 @@ details.description:not([open]) summary::after {
 
 // Adjust font size for footnotes.
 .footnotes {
-  font-size: 12px !important;
+  font-size: 18px !important;
+  color: white !important;
   p, li{
-    font-size: 12px !important;
+    font-size: 18px !important;
  } 
 }
 
 // Adjust with of social media icons were getting cut off
 .social-media-list{
   .svg-icon {
-    width: 25px !important;
-    height: 23px !important;
+    width: 30px !important;
+    height: 28px !important;
   }
 }
 
