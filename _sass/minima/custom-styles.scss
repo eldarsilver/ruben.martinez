@@ -20,9 +20,10 @@
 
 .site-footer {
  background-color: #17a2b8;
+ color: white !important;
 }
 
-$background-color: #181818 !default;
+$background-color: #181818 !important;
 
 body {
   color: $background-color;
