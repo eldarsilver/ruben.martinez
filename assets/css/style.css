@@ -363,7 +363,7 @@ pre { margin-bottom: 1.5rem !important; }
 
 li h3, li h4 { margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
-li .post-meta-description { color: #ab132c; font-size: 20px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
+li .post-meta-description { color: #3a3a3a; font-size: 20px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
 details.description[open] summary::after { content: attr(data-open); }
 
@@ -389,7 +389,7 @@ h1:hover .anchor-link, h2:hover .anchor-link, h3:hover .anchor-link, h4:hover .a
 
 .category-tags-icon { font-size: 75% !important; padding-left: 0.375em; opacity: 35%; }
 
-.category-tags-link { color: #bb8181 !important; font-size: 13px !important; }
+.category-tags-link { color: #3a3a3a !important; font-size: 13px !important; }
 
 .js-search-results { padding-top: 0.2rem; }
 
