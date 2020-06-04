@@ -11,12 +11,12 @@
 @import "minima/fastpages-dracula-highlight"; 
 
 .site-header {
- background-color: #6610f2;
+ background-color: #17a2b8;
 }
 
-$color-1: #ffff00;
-$color-2: #0000ff;
+
+$background-color: #181818 !default;
 
 body {
-color: #6f42c1;
+  background-color: $background-color;
 }
