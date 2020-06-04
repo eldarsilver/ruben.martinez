@@ -11,12 +11,12 @@
 @import "minima/fastpages-dracula-highlight"; 
 
 .site-header {
- background-color: red;
+ background-color: #6f42c1;
 }
 
 $color-1: #ffff00;
 $color-2: #0000ff;
 
 body {
-background-color: mix($color-1, $color-2, 30%);
+background: mix($color-1, $color-2, 30%);
 }
