@@ -14,6 +14,9 @@
  background-color: red;
 }
 
+$color-1: #ffff00;
+$color-2: #0000ff;
+
 body {
-background-color: blue;
+background-color: mix($color-1, $color-2, 30%);
 }
