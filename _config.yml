@@ -43,7 +43,7 @@ minima:
     github: eldarsilver
     
 minima:
-  skin: solarized
+  skin: solarized-dark
 
 # Set this to true to get LaTeX math equation support
 use_math: yes
