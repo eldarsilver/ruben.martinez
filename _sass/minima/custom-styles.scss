@@ -18,9 +18,12 @@
  color: white !important;
 }
 
+.site-footer {
+ background-color: #17a2b8;
+}
 
 $background-color: #181818 !default;
 
 body {
-  color: black;
+  color: $background-color;
 }
