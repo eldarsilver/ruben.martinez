@@ -22,9 +22,10 @@ img.emoji{
 }
 
 .page-content {
-        background-color: red !important;
+        background-color: linear-gradient(blue, black) !important;
         -webkit-font-smoothing: antialiased !important;
         text-rendering: optimizeLegibility !important;
+        color: white !important;
         font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important;
 }
 
