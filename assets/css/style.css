@@ -485,6 +485,8 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 
 .site-header { background-color: #17a2b8; }
 
-body { background-color: #fdfdfd; }
+.site-title, .page-link { color: white !important; }
+
+body { background-color: black; }
 
 /*# sourceMappingURL=style.css.map */
