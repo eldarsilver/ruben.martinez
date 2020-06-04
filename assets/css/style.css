@@ -483,8 +483,8 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 
 .highlight .gd { color: #ff5555; }
 
-.site-header { background-color: #6f42c1; }
+.site-header { background-color: #6610f2; }
 
-body { background: #4d4db3; }
+body { color: #6f42c1; }
 
 /*# sourceMappingURL=style.css.map */
