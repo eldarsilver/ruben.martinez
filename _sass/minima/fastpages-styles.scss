@@ -22,7 +22,7 @@ img.emoji{
 }
 
 .page-content {
-        background-color: #17a2b8 !important;
+        background-color: #07526e !important;
         -webkit-font-smoothing: antialiased !important;
         text-rendering: optimizeLegibility !important;
         color: white !important;
@@ -104,9 +104,9 @@ details.description:not([open]) summary::after {
 // Adjust font size for footnotes.
 .footnotes {
   font-size: 18px !important;
-  color: white !important;
   p, li{
     font-size: 18px !important;
+    color: white !important;
  } 
 }
 
