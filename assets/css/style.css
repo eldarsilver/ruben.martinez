@@ -487,8 +487,8 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 
 .site-title, .page-link { color: white !important; }
 
-.site-footer { background-color: #17a2b8; }
+.site-footer { background-color: #17a2b8; color: white !important; }
 
-body { color: #fdfdfd; }
+body { color: #181818 !important; }
 
 /*# sourceMappingURL=style.css.map */
