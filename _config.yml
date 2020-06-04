@@ -41,7 +41,7 @@ minima:
   social_links:
     twitter: eldarsilver
     github: eldarsilver
-  skin: dark
+  skin: solarized-dark
 
 # Set this to true to get LaTeX math equation support
 use_math: yes
