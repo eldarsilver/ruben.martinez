@@ -15,7 +15,8 @@ Language: Spanish
 
 <a href="https://www.bigthingsconference.com/2019/schedule/bayesian-voice-emotion-detection-applied-to-robotics-adding-uncertainty/">Link to the description of the talk</a>
 
-> youtube: https://youtu.be/hMGppH6mmFI
+<iframe width="480" height="270" src="https://www.youtube.com/embed/hMGppH6mmFI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### Teaching a robot Guess Who? From Deep Learning to Brain Spikes
 
@@ -23,4 +24,4 @@ Language: English
 
 <a href="https://www.bigdataspain.org/2018/talk/teaching-a-robot-guess-who-using-adversarial-triplet-loss/">Link to the description of the talk</a>
 
-> youtube: https://youtu.be/63U2iCh-KD0
+<iframe width="480" height="270" src="https://www.youtube.com/embed/63U2iCh-KD0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
