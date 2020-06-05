@@ -1,4 +1,465 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://eldarsilver.github.io/ruben.martinez/feed.xml" rel="self" type="application/atom+xml" /><link href="https://eldarsilver.github.io/ruben.martinez/" rel="alternate" type="text/html" /><updated>2020-06-05T06:26:47-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/feed.xml</id><title type="html">Ruben Martínez Sánchez</title><subtitle>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let's share!</subtitle><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 1</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 1" /><published>2020-06-01T00:00:00-05:00</published><updated>2020-06-01T00:00:00-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html">&lt;p&gt;Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://eldarsilver.github.io/ruben.martinez/feed.xml" rel="self" type="application/atom+xml" /><link href="https://eldarsilver.github.io/ruben.martinez/" rel="alternate" type="text/html" /><updated>2020-06-05T06:28:32-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/feed.xml</id><title type="html">Ruben Martínez Sánchez</title><subtitle>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let's share!</subtitle><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 6</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-6.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 6" /><published>2020-06-05T00:00:00-05:00</published><updated>2020-06-05T00:00:00-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-6</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-6.html">&lt;p&gt;En el quinto artículo de esta serie hicimos un repaso general de los conceptos más importantes desarrollados hasta ese momento, poniendo especial foco en cómo codificar 1 qubit. Eso nos llevó a plantearnos cómo se conseguiría llevar a cabo la representación de estados cuánticos compuestos por varios qubits, lo que a su vez abrió el camino para el tema en el que vamos a centrarnos en esta publicación: el fenómeno conocido como entanglement. Vamos a incorporar un concepto más a nuestra mochila. ¡Pero tranquilos que no será nada pesada!&lt;/p&gt;
+
+&lt;h2 id=&quot;entanglement&quot;&gt;Entanglement&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Vamos a comenzar de la misma forma que lo hicimos en el artículo anterior, recapitulando los puntos claves que se trataron en él. El primer tema que pudimos comprobar fue que la forma de construir estados cuánticos formados por varios qubits era mediante la operación del producto de tensores o producto Kronecker de los qubits individuales. Suponiendo que tenemos 2 qubits llamados (&lt;/td&gt;
+      &lt;td&gt;\psi &amp;gt;) y (&lt;/td&gt;
+      &lt;td&gt;\psi’ &amp;gt;):&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image6.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El resultado de realizar el producto de tensores o producto Kronecker de esos 2 qubits será:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Si estamos trabajando con estados cuánticos compuestos por 2 qubits entonces tendremos los siguientes vectores de base canónica:&lt;/td&gt;
+      &lt;td&gt;00&amp;gt;,&lt;/td&gt;
+      &lt;td&gt;01&amp;gt;,&lt;/td&gt;
+      &lt;td&gt;10&amp;gt; y&lt;/td&gt;
+      &lt;td&gt;11&amp;gt; en un espacio de números complejos de 4 dimensiones &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image9.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;También introdujimos en el artículo anterior la idea de que cuando construimos espacios de alta dimensionalidad empleando la operación del producto de tensores de los qubits individuales no todos los vectores de ese espacio resultante pueden ser obtenidos mediante el producto Kronecker de sus componentes.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;La mejor forma de entender algo es mediante ejemplos y por ello vamos a intentar demostrar ese concepto partiendo del siguiente estado de superposición de los kets&lt;/td&gt;
+      &lt;td&gt;00&amp;gt; y&lt;/td&gt;
+      &lt;td&gt;11&amp;gt;:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Como el vector resultante es una combinación lineal de 2 de los vectores canónicos (&lt;/td&gt;
+      &lt;td&gt;00&amp;gt; y&lt;/td&gt;
+      &lt;td&gt;11&amp;gt;) del espacio de los números complejos de 4 dimensiones, podemos decir que este vector pertenece a dicho espacio de &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image9.png&quot; alt=&quot;&quot; /&gt; El problema es que esto no puede ser escrito como el producto Kronecker (&lt;/td&gt;
+      &lt;td&gt;\psi &amp;gt; \otimes&lt;/td&gt;
+      &lt;td&gt;\psi’ &amp;gt;) para cualesquiera &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image4.png&quot; alt=&quot;&quot; /&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Para demostrarlo, vamos a escribir el estado cuántico &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image5.png&quot; alt=&quot;&quot; /&gt;como un producto Kronecker de sus componentes y posteriormente vamos a expandir el resultado sobre los vectores de base canónica de los complejos de 4 dimensiones:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Podemos ver que no aparecen los kets&lt;/td&gt;
+      &lt;td&gt;01&amp;gt; ni&lt;/td&gt;
+      &lt;td&gt;10&amp;gt; en esta parte de la expresión:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Por lo que llegamos a la conclusión de que (a_{0}b_{1} = 0) y (a_{1}b_{0} = 0). El problema es que eso lleva a una contradicción ya que como (a_{1}b_{1} = 1)de ahí extraemos que (a_{1})no puede ser 0 por lo que deducimos que (b_{0})debe ser 0. Pero eso tampoco puede ser posible debido a que como (a_{0}b_{0} = 1)entonces (b_{0})no podría ser 0.&lt;/p&gt;
+
+&lt;p&gt;Esto nos lleva a que los estados que no pueden ser escritos como un producto de tensores reciben el nombre de &lt;strong&gt;entangled states&lt;/strong&gt; o estados entrelazados. Se trata de un fenómeno físico que indica fuertes correlaciones entre variables aleatorias, por ejemplo, 2 qubits aunque dichos qubits estén separados por grandes distancias, de forma que estas correlaciones no son explicadas mediante la mecánica clásica. Esta propiedad nos permite entre otras cosas poder medir uno de los qubits entrelazados e instantáneamente poder determinar el valor del otro aunque ese otro qubit se encuentre en un estado probabilístico.&lt;/p&gt;
+
+&lt;p&gt;A continuación, vamos a ver cómo crear el estado &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image5.png&quot; alt=&quot;&quot; /&gt;empleando Qiskit:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;En este ejemplo, disponemos de 2 registros cuánticos qr[0] y qr[1] cada uno de ellos inicializado por defecto en el ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; y de 2 registros clásicos cr[0] y cr[1]. Creamos un circuito cuántico que dispone de esos 2 registros cuánticos qr y de los 2 registros clásicos cr. Una vez realizadas esas definiciones, aplicaremos la puerta Hadamard sobre el qubit 0 (el de más a la izquierda) siendo su definición:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Su definicón gráfica y su matriz son las siguientes:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El estado parcial después de aplicar esa puerta Hadamard sobre el qubit 0 será&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;(\frac{1}{})(&lt;/td&gt;
+      &lt;td&gt;00&amp;gt; +&lt;/td&gt;
+      &lt;td&gt;10&amp;gt;).&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;A continuación se aplicará sobre el resultado del paso anterior la puerta cx o también conocida como CNOT o controlled NOT. Esta puerta emplea 2 qubits, uno de control y otro denominado target, de forma que si el qubit de control es 1 entonces aplicará la puerta NOT o también conocida como x sobre el otro qubit (target). El efecto que provoca es el siguiente en caso de que el qubit de control sea el de más a la izquierda:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Y aquí podemos ver su definición en forma de matriz y gráfica:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Por lo que el resultado después de aplicar la puerta cx será (\frac{1}{})(&lt;/td&gt;
+      &lt;td&gt;00&amp;gt; +&lt;/td&gt;
+      &lt;td&gt;11&amp;gt;) estando los estados&lt;/td&gt;
+      &lt;td&gt;00&amp;gt; y&lt;/td&gt;
+      &lt;td&gt;11&amp;gt; en superposición. Esto puede comprobarse en el histograma donde cada uno de los estados aparece aproximadamente la mitad de las 100 veces (parámetro shots) que se repite la ejecución del circuito cuántico.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Siguiendo este procedimiento vamos ver cómo se implementaría el estado:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-6/media/image15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Hasta aquí este artículo en el que además de trabajar con estados formados por varios qubits y de introducir el concepto de entanglement hemos empezado a modificar estados empleando algunas puertas cuánticas. En los siguientes artículos profundizaremos en las distintas puertas cuánticas disponibles y cómo emplearlas usando el framework Qiskit. ¡No os lo perdáis!&lt;/p&gt;</content><author><name></name></author><summary type="html">En el quinto artículo de esta serie hicimos un repaso general de los conceptos más importantes desarrollados hasta ese momento, poniendo especial foco en cómo codificar 1 qubit. Eso nos llevó a plantearnos cómo se conseguiría llevar a cabo la representación de estados cuánticos compuestos por varios qubits, lo que a su vez abrió el camino para el tema en el que vamos a centrarnos en esta publicación: el fenómeno conocido como entanglement. Vamos a incorporar un concepto más a nuestra mochila. ¡Pero tranquilos que no será nada pesada!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" /><media:content medium="image" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 5</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 5" /><published>2020-06-05T00:00:00-05:00</published><updated>2020-06-05T00:00:00-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html">&lt;p&gt;En el cuarto artículo de esta serie se introdujeron conceptos como &lt;strong&gt;superposición&lt;/strong&gt; e &lt;strong&gt;interferencia&lt;/strong&gt; y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como &lt;strong&gt;entanglement&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;múltiples-qubits&quot;&gt;Múltiples qubits&lt;/h2&gt;
+
+&lt;p&gt;En este punto vamos a empezar a trabajar con estados cuánticos formados por varios qubits. Si recordamos lo que vimos anteriormente, un estado cuántico lo podemos asemejar a una distribución de probabilidad y un &lt;strong&gt;qubit&lt;/strong&gt; es un estado cuántico de 2 niveles [a0, a1], de forma que podemos representar un estado cuántico mediante un vector columnar.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Para hacer referencia a su label (el nombre de dicho estado) se utilizará lo que se denomina ket en la notación Dirac, es decir, podemos referirnos a nuestro estado cuántico mediante el ket (&lt;/td&gt;
+      &lt;td&gt;\psi &amp;gt;). Para continuar refrescando conceptos previos, estas distribuciones de probabilidad deberán tener norma 1 en la &lt;strong&gt;norma L2&lt;/strong&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Por tanto recapitulando, podemos escribir un qubit de la siguiente forma:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Donde a0 y a1 reciben el nombre de &lt;strong&gt;amplitudes de probabilidad&lt;/strong&gt; y son números complejos, por lo que no sólo estaremos restringidos al cuadrante positivo del plano como ocurría con las distribuciones de probabilidad clásica cuya norma debe ser igual a 1 en la norma L1 y además cada probabilidad debía ser mayor o igual a 0 (lo que únicamente permitía representaciones en el cuadrante positivo citado anteriormente).&lt;/p&gt;
+
+&lt;p&gt;Como en computación cuántica el requisito de normalización debe ser la norma L2 eso puede formalizarse para el caso de un qubit en que:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Podemos encontrar 2 qubits especiales llamados vectores de base canónica en 2 dimensiones que son:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La parte interesante es que podemos expandir cualquier qubit en esta base de la siguiente forma dando lugar al fenómeno de superposición:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Según la regla de Born, si extraemos una muestra del qubit (&lt;/td&gt;
+      &lt;td&gt;\psi &amp;gt;)obtendremos la salida 0 con una probabilidad ({&lt;/td&gt;
+      &lt;td&gt;a_{0}&lt;/td&gt;
+      &lt;td&gt;}^{2}) y la salida 1 con una probabilidad de ({&lt;/td&gt;
+      &lt;td&gt;a_{1}&lt;/td&gt;
+      &lt;td&gt;}^{2}).&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Una vez finalizado este repaso, toca ponernos manos a la obra con nuevos conceptos. Vamos a comprobar cómo añadir más qubits nos permite introducir otro fenómeno cuántico.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;En este punto nos puede surgir la duda sobre cómo representar en forma de vector columnar 2 qubits. La forma de hacerlo es empleando la operación de producto de tensores o &lt;strong&gt;producto Kronecker&lt;/strong&gt;. Para entenderlo vamos a ver un ejemplo en el que partimos de 2 qubits (&lt;/td&gt;
+      &lt;td&gt;\psi &amp;gt;)y (&lt;/td&gt;
+      &lt;td&gt;\psi’ &amp;gt;):&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image4.png&quot; alt=&quot;&quot; /&gt; &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El producto de tensores o producto Kronecker de esos 2 qubits será:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Vamos a concretar un poco más. Supongamos que tenemos almacenado en el registro cuántico qr0 un qubit que está en el estado&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; y también disponemos de otro registro cuántico llamado qr1 que de forma similar al anterior almacena un qubit en el estado&lt;/td&gt;
+      &lt;td&gt;0&amp;gt;. Una forma de visualizar la regla del producto Kronecker de esos 2 qubits (&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; (\otimes)&lt;/td&gt;
+      &lt;td&gt;0&amp;gt;) sería mediante el siguiente código:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;El estado resultante del producto Kronecker de esos dos qubits que cada uno de ellos se encuentra en el estado&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; se suele representar como&lt;/td&gt;
+      &lt;td&gt;00&amp;gt;. Si quisiéramos representar los estados&lt;/td&gt;
+      &lt;td&gt;01&amp;gt;,&lt;/td&gt;
+      &lt;td&gt;10&amp;gt; y&lt;/td&gt;
+      &lt;td&gt;11&amp;gt; tendríamos que seguir el mismo procedimiento que hemos realizado para generar el ket&lt;/td&gt;
+      &lt;td&gt;00&amp;gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hay que señalar que los estados&lt;/td&gt;
+      &lt;td&gt;00&amp;gt;,&lt;/td&gt;
+      &lt;td&gt;01&amp;gt;,&lt;/td&gt;
+      &lt;td&gt;10&amp;gt; y&lt;/td&gt;
+      &lt;td&gt;11&amp;gt; forman los vectores de base canónica en un espacio de números complejos de 4 dimensiones denotado como &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image7.png&quot; alt=&quot;&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Cuando empleamos modelos de Machine Learning y Deep Learning también trabajamos con espacios de alta dimensionalidad pero no se construyen como un producto de tensores sino que suele tratarse de (R^{n}), es decir, un mapeo a los números reales para alguna dimensión ‘n’.&lt;/p&gt;
+
+&lt;p&gt;El efecto de construir espacios de alta dimensionalidad empleando producto de tensores es que no todos los vectores de dicho espacio pueden ser escritos como el producto de vectores de los elementos de ese espacio. Este hecho que en principio puede parecer confuso, nos permitirá descubrir la propiedad cuántica conocida como &lt;strong&gt;entanglement,&lt;/strong&gt; que recorreremos en el siguiente artículo viendo cómo la podemos observar empleando Qiskit. ¡No te lo pierdas!&lt;/p&gt;</content><author><name></name></author><summary type="html">En el cuarto artículo de esta serie se introdujeron conceptos como superposición e interferencia y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como entanglement.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" /><media:content medium="image" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 4</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 4" /><published>2020-06-04T00:00:00-05:00</published><updated>2020-06-04T00:00:00-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html">&lt;p&gt;En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica.&lt;/p&gt;
+
+&lt;h2 id=&quot;superposición-y-números-complejos&quot;&gt;Superposición y números complejos&lt;/h2&gt;
+
+&lt;p&gt;Los números complejos tiene la forma de a + bi donde ‘a’ es la &lt;strong&gt;parte real&lt;/strong&gt; y ‘bi’ es la &lt;strong&gt;parte imaginaria&lt;/strong&gt; siendo ‘a’ y ‘b’ números reales positivos o negativos e ‘i’ se corresponde con el número imaginario de forma que i = () (ya que no tenemos números reales que después de elevarlos al cuadrado sigan siendo negativos, por lo que no podremos volver hacia atrás haciendo la raíz cuadrada).&lt;/p&gt;
+
+&lt;p&gt;Los números complejos permiten representar coordenadas en un plano de manera que la parte real se asociará al eje X y la parte imaginaria con el eje Y. Por lo que sumar en la parte real supondrá movernos hacia la derecha, restar en la parte real movernos hacia la izquierda, sumar en la parte imaginaria nos permitirá desplazarnos hacia arriba y restar en la parte imaginaria supondrá movernos hacia abajo en el plano.&lt;/p&gt;
+
+&lt;h4 id=&quot;suma--resta-de-números-complejos&quot;&gt;Suma / Resta de Números Complejos&lt;/h4&gt;
+
+&lt;p&gt;(7 + 3i) + (3 - 5i) = (10 -2i)&lt;/p&gt;
+
+&lt;h4 id=&quot;multiplicación-de-números-complejos&quot;&gt;Multiplicación de Números Complejos&lt;/h4&gt;
+
+&lt;p&gt;(7 + 3i) * (3 -5i) = 7 * 3 + 7 * (-5i) + 3i * 3 + 3i * (-5i) = 21 + (-35i) + 9i + (-15(i^{2})) = 21 -26i -15*(-1) = 36 - 26i&lt;/p&gt;
+
+&lt;p&gt;La razón por la que (i^{2})simplifica a (-1) es porque i = () .&lt;/p&gt;
+
+&lt;h4 id=&quot;división-de-números-complejos&quot;&gt;División de Números Complejos&lt;/h4&gt;
+
+&lt;p&gt;Para realizar la división de números complejos hay que introducir el concepto de &lt;strong&gt;conjugada de números complejos,&lt;/strong&gt; que consiste en cambiar el signo a la parte imaginaria. Por ejemplo la conjugada del número complejo (a + bi) será (a - bi). Multiplicar un número complejo por su conjugada supone que los términos centrales se cancelan:&lt;/p&gt;
+
+&lt;p&gt;(a + bi) * (a - bi) = (a^{2}\  - abi\  + \ abi\  - {(bi)}^{2})&lt;/p&gt;
+
+&lt;p&gt;Para realizar la división de números complejos multiplicaremos al numerador y al denominador por la conjugada del denominador:&lt;/p&gt;
+
+&lt;p&gt;(7 + 3i) / (3 - 5i) = ((7 + 3i) * (3 + 5i)) / ((3 - 5i) * (3 + 5i))&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Para comprobar la utilidad de emplear números complejos vamos a realizar un circuito cuántico que aplique una rotación ‘&lt;strong&gt;ry&lt;/strong&gt;’ de 90º pero ahora al ket&lt;/td&gt;
+      &lt;td&gt;1&amp;gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Hemos visto que todo qubit comienza inicializado en el estado ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; por lo que tendremos que aplicar la puerta cuántica ‘&lt;strong&gt;x&lt;/strong&gt;’ (que se correspondería con una puerta lógica NOT) sobre el qubit para que pase a estar en estado&lt;/td&gt;
+      &lt;td&gt;1&amp;gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;La puerta cuántica ‘x’ se corresponderá con la matriz:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Una vez que el qubit se encuentre en el&lt;/td&gt;
+      &lt;td&gt;1&amp;gt; aplicaremos la puerta ‘ry’ con un ángulo de 90º para realizar dicha rotación:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;En el tercer artículo de esta serie se aplicó la puerta ‘x’ sobre el qubit en el estado&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; y el resultado fue:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Se puede comprobar que cuando se aplica la rotación ‘ry’ sobre el ket&lt;/td&gt;
+      &lt;td&gt;1&amp;gt; el resultado es similar al anterior pero con signo opuesto, por lo que tendremos una amplitud de probabilidad negativa. El estado obtenido será:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;La utilidad de disponer de números complejos para representar las amplitudes de probabilidad de los estados cuánticos se hace patente cuando se comprueba que el signo negativo del ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; anterior no puede observarse al realizar la medición de las estadísticas de la ejecución del circuito cuántico. Para obtener dichas estadísticas de las frecuencias de cada resultado se ha empleado el backend ‘qasm_simulator’:&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Se puede comprobar que prácticamente se han producido el mismo número de caras (‘0s’) que de cruces (‘1s’). La utilización de números complejos permite modelar un fenómeno de mecánica cuántica conocido como ‘&lt;strong&gt;interferencia&lt;/strong&gt;’ según el cual las amplitudes de probabilidad puede interactuar unas veces constructiva y otras destructivamente. Una forma de comprobarlo es aplicar sobre un qubit en el estado&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; dos rotaciones ‘ry’ consecutivas de 90º. Al realizarlo obtendremos el ket&lt;/td&gt;
+      &lt;td&gt;1&amp;gt; aunque durante el proceso hubo cierta superposición.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;El código para realizar este experimento en el que se realizarán 50 ejecuciones del circuito cuántico sobre el backend ‘qasm_simulator’ y se obtendrá el histograma de los resultados es el siguiente:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image2.png&quot; alt=&quot;&quot; /&gt; ()&lt;/p&gt;
+
+&lt;p&gt;En próximos artículos seguiremos avanzando tratando más propiedades presentes en mecánica cuántica como por ejemplo el &lt;strong&gt;‘Entanglement’&lt;/strong&gt; y viendo cómo implementarlas empleando el framework Qiskit. ¡Os esperamos!&lt;/p&gt;</content><author><name></name></author><summary type="html">En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" /><media:content medium="image" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 3</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/06/03/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-3.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 3" /><published>2020-06-03T00:00:00-05:00</published><updated>2020-06-03T00:00:00-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/06/03/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-3</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/06/03/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-3.html">&lt;p&gt;En el primer artículo de la serie vimos cómo aproximarnos a las distribuciones de probabilidad en la Computación Clásica que emplea bits como unidad básica de información y en el segundo comenzamos a asomarnos de forma superficial a la Computación Cuántica introduciendo conceptos como qubit, base canónica, superposición, regla de Born y finalizamos viendo cómo implementar un circuito cuántico con Qiskit que modelizaba el problema del lanzamiento de una moneda completamente sesgada que siempre devuelve ‘cara’ (que se corresponde con el valor de salida ‘0’).&lt;/p&gt;
+
+&lt;p&gt;Utilizaremos ese código como punto de partida para los temas que vamos a tratar en esta ocasión:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-03-Introducción-a-la-Computación-Cuántica-con-Qiskit-3/media/image1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-03-Introducción-a-la-Computación-Cuántica-con-Qiskit-3/media/image7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-03-Introducción-a-la-Computación-Cuántica-con-Qiskit-3/media/image4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;esfera-bloch&quot;&gt;Esfera Bloch&lt;/h2&gt;
+
+&lt;p&gt;Al realizar en el backend ‘&lt;strong&gt;qasm_simulator&lt;/strong&gt;’ las 50 ejecuciones y posteriores medidas del circuito anterior formado por un qubit inicializado en el ket 0 se obtiene siempre la salida ‘0’ (cara de la moneda).&lt;/p&gt;
+
+&lt;p&gt;Sería muy útil disponer de algún mecanismo de visualización para facilitar la comprensión de los pasos que vamos dando y aquí es donde entra en escena la &lt;strong&gt;Esfera Bloch&lt;/strong&gt;. Se trata de una representación que permite proyectar un estado cuántico a una localización de la superficie de una esfera con unas características un tanto especiales.&lt;/p&gt;
+
+&lt;p&gt;Habíamos visto que un qubit tiene 2 amplitudes de probabilidad (una correspondiente a cada base canónica) y como son números complejos (parte real y parte imaginaria) se necesitaría un espacio de 4 dimensiones. Pero como los vectores están normalizados esto elimina un grado de libertad por lo que podríamos emplear una representación en &lt;strong&gt;3 dimensiones&lt;/strong&gt;, que como estaréis imaginando, será la Esfera Bloch.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Antes comentábamos que esta esfera tiene una serie de peculiaridades. Su &lt;strong&gt;polo norte&lt;/strong&gt; se corresponde con el estado del **ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt;** y su &lt;strong&gt;polo sur&lt;/strong&gt; con el del **ket&lt;/td&gt;
+      &lt;td&gt;1&amp;gt;&lt;strong&gt;. Intuitivamente esto podría extrañar ya que en el eje Z se encuentran 2 vectores que son **ortogonales&lt;/strong&gt;. La potencia de este tipo de representación es que cualquier punto de la esfera se corresponderá con un estado cuántico y también podemos afirmar que cualquier &lt;strong&gt;estado cuántico puro&lt;/strong&gt;, es decir, un estado cuántico representado por un ket (vector columnar) se podrá visualizar como un punto de la esfera. También podremos encontrar &lt;strong&gt;estados cuánticos mixtos&lt;/strong&gt; (no descritos por un ket) que estarán representados dentro de la esfera.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ya es turno de volver a tocar un poco de código y ver cómo se visualiza esa Esfera Bloch. Para ello, en primer lugar vamos a emplear el backend ‘&lt;strong&gt;statevector_simulartor&lt;/strong&gt;’ mediante llamada a &lt;strong&gt;BasicAer.get_backend()&lt;/strong&gt;. A continuación, crearemos un circuito llamado ‘&lt;strong&gt;circuit&lt;/strong&gt;’ formado por un registro cuántico (‘&lt;strong&gt;qr&lt;/strong&gt;’) y por uno clásico (‘&lt;strong&gt;cr&lt;/strong&gt;’). El objetivo es que el qubit almacenado en ‘qr’ se encuentre en el estado ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; (situación que ocurre por defecto) y visualizarlo en la Esfera Bloch. Hay que decir que para modificar el estado de los qubits emplearemos puertas cuánticas (matrices que transformarán los vectores columnares de los qubits). En este caso no hay que realizar ninguna modificación al qubit pero aun así hay que añadir una operación llamada ‘iden’ al circuito que corresponde con la matriz identidad.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Un punto a señalar es que por convenio en los &lt;strong&gt;registros cuánticos&lt;/strong&gt; la posición menos significativa será la de más a la izquierda. Es decir, si se define un registro cuántico que contendrá 2 qubits:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;qr = QuantumRegister(2)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;El qubit menos significativo, es decir qr[0], será el que esté más a la izquierda y el más significativo es de más a la derecha en la siguiente representación **&lt;/td&gt;
+      &lt;td&gt;00&amp;gt;**.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;En el caso de los &lt;strong&gt;registros clásicos&lt;/strong&gt; (en los que guardaremos los resultados de las mediciones de circuitos cuánticos) la posición menos significativa será la de más a la derecha como ocurre a la hora de representar bits.&lt;/p&gt;
+
+&lt;p&gt;Volviendo a nuestro ejemplo, una vez añadida al circuito la operación ‘&lt;strong&gt;iden&lt;/strong&gt;’ sobre el qubit se invocará al método ‘&lt;strong&gt;execute&lt;/strong&gt;’ sobre el circuito indicando el backend almacenando el manejador de esa llamada en la variable ‘&lt;strong&gt;job&lt;/strong&gt;’. Una vez hecho esto, se invocará al método ‘&lt;strong&gt;plot_bloch_multivector&lt;/strong&gt;’ haciéndole llegar el resultado de ‘&lt;strong&gt;job.result().get_statevector(circuit)&lt;/strong&gt;’.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;En la siguiente imagen puede verse el código completo y la visualización de la Esfera Bloch en la que aparece resaltada la flecha correspondiente al qubit en el estado del ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-03-Introducción-a-la-Computación-Cuántica-con-Qiskit-3/media/image5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;superposición&quot;&gt;Superposición&lt;/h2&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Para entender el fenómeno de la Superposición vamos a seguir con el ejemplo del lanzamiento de una moneda pero ahora el objetivo es que no esté sesgada. Es decir, vamos a pasar del caso en que la moneda estaba completamente sesgada de forma que siempre se obtenía cara (ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt;) a la situación de que en el 50% de los casos se obtenga cara y en el otro 50% se obtenga cruz que se corresponderá con el estado de superposición (\frac{1\ }{})((&lt;/td&gt;
+      &lt;td&gt;0 &amp;gt; +&lt;/td&gt;
+      &lt;td&gt;1 &amp;gt; ))donde&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;({(\frac{1}{})}^{2})= (\frac{1}{2}) de los casos que según la regla de Born la salida se corresponderá con el ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; y el resto al ket&lt;/td&gt;
+      &lt;td&gt;1&amp;gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Una forma de realizar esta transformación será empleando la &lt;strong&gt;Quantum Gate ‘ry’&lt;/strong&gt; que se corresponderá con una rotación de (\frac{\pi}{2})en el eje Y. Esa puerta se implementa mediante la matriz:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-03-Introducción-a-la-Computación-Cuántica-con-Qiskit-3/media/image3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En futuros artículos de esta serie veremos más tipos de puertas cuánticas y entre ellas la puerta Hadamard que nos permitirá llegar también a un estado de Superposición.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;A continuación, veremos el código para construir el circuito que parte de un qubit en el estado ket&lt;/td&gt;
+      &lt;td&gt;0&amp;gt; , le aplica la puerta ‘ry’ para obtener una moneda no sesgada e invoca al método ‘&lt;strong&gt;plot_histogram&lt;/strong&gt;’ sobre el resultado de 50 ejecuciones del circuito en el backend ‘&lt;strong&gt;qasm_simulator&lt;/strong&gt;’ (almacenado en la variable ‘bk’) para poder obtener el conteo de veces en el que el lanzamiento de la moneda acaba en cada estado.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-03-Introducción-a-la-Computación-Cuántica-con-Qiskit-3/media/image6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si queremos visualizar ese experimento en la Esfera Bloch el código sería el siguiente&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-03-Introducción-a-la-Computación-Cuántica-con-Qiskit-3/media/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Como se puede comprobar se ha producido una rotación de 90º sobre el eje Y.&lt;/p&gt;
+
+&lt;p&gt;En el siguiente artículo seguiremos jugando con puertas cuánticas. ¡No os lo perdáis!&lt;/p&gt;</content><author><name></name></author><summary type="html">En el primer artículo de la serie vimos cómo aproximarnos a las distribuciones de probabilidad en la Computación Clásica que emplea bits como unidad básica de información y en el segundo comenzamos a asomarnos de forma superficial a la Computación Cuántica introduciendo conceptos como qubit, base canónica, superposición, regla de Born y finalizamos viendo cómo implementar un circuito cuántico con Qiskit que modelizaba el problema del lanzamiento de una moneda completamente sesgada que siempre devuelve ‘cara’ (que se corresponde con el valor de salida ‘0’).</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" /><media:content medium="image" url="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 1</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 1" /><published>2020-06-01T00:00:00-05:00</published><updated>2020-06-01T00:00:00-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html">&lt;p&gt;Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación.&lt;/p&gt;
 
 &lt;p&gt;Comencemos por la pregunta más obvia. ¿Cuál es la principal diferencia entre la Computación Clásica y la Computación Cuántica?&lt;/p&gt;
 

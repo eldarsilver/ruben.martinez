@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 5 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 5" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="En el cuarto artículo de esta serie se introdujeron conceptos como superposición e interferencia y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como entanglement." />
+<meta property="og:description" content="En el cuarto artículo de esta serie se introdujeron conceptos como superposición e interferencia y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como entanglement." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:image" content="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-05T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"En el cuarto artículo de esta serie se introdujeron conceptos como superposición e interferencia y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como entanglement.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 5","dateModified":"2020-06-05T00:00:00-05:00","datePublished":"2020-06-05T00:00:00-05:00","image":"https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg","url":"https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ruben.martinez/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" /><link rel="shortcut icon" type="image/x-icon" href="/ruben.martinez/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 5 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 5" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="En el cuarto artículo de esta serie se introdujeron conceptos como superposición e interferencia y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como entanglement." />
+<meta property="og:description" content="En el cuarto artículo de esta serie se introdujeron conceptos como superposición e interferencia y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como entanglement." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:image" content="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-05T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"En el cuarto artículo de esta serie se introdujeron conceptos como superposición e interferencia y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como entanglement.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 5","dateModified":"2020-06-05T00:00:00-05:00","datePublished":"2020-06-05T00:00:00-05:00","image":"https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg","url":"https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ruben.martinez/">Ruben Martínez Sánchez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ruben.martinez/about/">About Me</a><a class="page-link" href="/ruben.martinez/search/">Search</a><a class="page-link" href="/ruben.martinez/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Introducción A La Computación Cuántica Con Qiskit 5</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-05T00:00:00-05:00" itemprop="datePublished">
+        Jun 5, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>En el cuarto artículo de esta serie se introdujeron conceptos como <strong>superposición</strong> e <strong>interferencia</strong> y cómo codificarlos empleando Qiskit. Ahora es turno de ver cómo representar varios qubits y de adentrarnos en la propiedad conocida como <strong>entanglement</strong>.</p>
+
+<h2 id="múltiples-qubits">Múltiples qubits</h2>
+
+<p>En este punto vamos a empezar a trabajar con estados cuánticos formados por varios qubits. Si recordamos lo que vimos anteriormente, un estado cuántico lo podemos asemejar a una distribución de probabilidad y un <strong>qubit</strong> es un estado cuántico de 2 niveles [a0, a1], de forma que podemos representar un estado cuántico mediante un vector columnar.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Para hacer referencia a su label (el nombre de dicho estado) se utilizará lo que se denomina ket en la notación Dirac, es decir, podemos referirnos a nuestro estado cuántico mediante el ket (</td>
+      <td>\psi &gt;). Para continuar refrescando conceptos previos, estas distribuciones de probabilidad deberán tener norma 1 en la <strong>norma L2</strong>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Por tanto recapitulando, podemos escribir un qubit de la siguiente forma:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image1.png" alt="" /></p>
+
+<p>Donde a0 y a1 reciben el nombre de <strong>amplitudes de probabilidad</strong> y son números complejos, por lo que no sólo estaremos restringidos al cuadrante positivo del plano como ocurría con las distribuciones de probabilidad clásica cuya norma debe ser igual a 1 en la norma L1 y además cada probabilidad debía ser mayor o igual a 0 (lo que únicamente permitía representaciones en el cuadrante positivo citado anteriormente).</p>
+
+<p>Como en computación cuántica el requisito de normalización debe ser la norma L2 eso puede formalizarse para el caso de un qubit en que:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image6.png" alt="" /></p>
+
+<p>Podemos encontrar 2 qubits especiales llamados vectores de base canónica en 2 dimensiones que son:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image8.png" alt="" /></p>
+
+<p>La parte interesante es que podemos expandir cualquier qubit en esta base de la siguiente forma dando lugar al fenómeno de superposición:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image5.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Según la regla de Born, si extraemos una muestra del qubit (</td>
+      <td>\psi &gt;)obtendremos la salida 0 con una probabilidad ({</td>
+      <td>a_{0}</td>
+      <td>}^{2}) y la salida 1 con una probabilidad de ({</td>
+      <td>a_{1}</td>
+      <td>}^{2}).</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Una vez finalizado este repaso, toca ponernos manos a la obra con nuevos conceptos. Vamos a comprobar cómo añadir más qubits nos permite introducir otro fenómeno cuántico.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>En este punto nos puede surgir la duda sobre cómo representar en forma de vector columnar 2 qubits. La forma de hacerlo es empleando la operación de producto de tensores o <strong>producto Kronecker</strong>. Para entenderlo vamos a ver un ejemplo en el que partimos de 2 qubits (</td>
+      <td>\psi &gt;)y (</td>
+      <td>\psi’ &gt;):</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image4.png" alt="" /> <img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image9.png" alt="" /></p>
+
+<p>El producto de tensores o producto Kronecker de esos 2 qubits será:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image2.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Vamos a concretar un poco más. Supongamos que tenemos almacenado en el registro cuántico qr0 un qubit que está en el estado</td>
+      <td>0&gt; y también disponemos de otro registro cuántico llamado qr1 que de forma similar al anterior almacena un qubit en el estado</td>
+      <td>0&gt;. Una forma de visualizar la regla del producto Kronecker de esos 2 qubits (</td>
+      <td>0&gt; (\otimes)</td>
+      <td>0&gt;) sería mediante el siguiente código:</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image3.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>El estado resultante del producto Kronecker de esos dos qubits que cada uno de ellos se encuentra en el estado</td>
+      <td>0&gt; se suele representar como</td>
+      <td>00&gt;. Si quisiéramos representar los estados</td>
+      <td>01&gt;,</td>
+      <td>10&gt; y</td>
+      <td>11&gt; tendríamos que seguir el mismo procedimiento que hemos realizado para generar el ket</td>
+      <td>00&gt;.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Hay que señalar que los estados</td>
+      <td>00&gt;,</td>
+      <td>01&gt;,</td>
+      <td>10&gt; y</td>
+      <td>11&gt; forman los vectores de base canónica en un espacio de números complejos de 4 dimensiones denotado como <img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-05-Introducción-a-la-Computación-Cuántica-con-Qiskit-5/media/image7.png" alt="" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Cuando empleamos modelos de Machine Learning y Deep Learning también trabajamos con espacios de alta dimensionalidad pero no se construyen como un producto de tensores sino que suele tratarse de (R^{n}), es decir, un mapeo a los números reales para alguna dimensión ‘n’.</p>
+
+<p>El efecto de construir espacios de alta dimensionalidad empleando producto de tensores es que no todos los vectores de dicho espacio pueden ser escritos como el producto de vectores de los elementos de ese espacio. Este hecho que en principio puede parecer confuso, nos permitirá descubrir la propiedad cuántica conocida como <strong>entanglement,</strong> que recorreremos en el siguiente artículo viendo cómo la podemos observar empleando Qiskit. ¡No te lo pierdas!</p>
+
+  </div><a class="u-url" href="/ruben.martinez/2020/06/05/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-5.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ruben.martinez/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ruben.martinez/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let&#39;s share!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
