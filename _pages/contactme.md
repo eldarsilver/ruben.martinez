@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contact Me
+title: Contact
 ---
 
 
@@ -12,4 +12,4 @@ We can keep in touch using the following channels:
 
 * Github: https://github.com/eldarsilver
 
-<img src="images/ruben.jpg">
+<img src="../images/ruben.jpg" width="400" height="250">
