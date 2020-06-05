@@ -363,7 +363,7 @@ pre { margin-bottom: 1.5rem !important; }
 
 li h3, li h4 { margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
-li .post-meta-description { color: #3a3a3a; font-size: 20px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
+li .post-meta-description { color: #3a3a3a; font-size: 16px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
 details.description[open] summary::after { content: attr(data-open); }
 
