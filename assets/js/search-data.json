@@ -115,6 +115,17 @@
   
 
   
+      ,"page2": {
+          "title": "Conference Videos",
+          "content": "Conferences . In this section you can find videos of some conferences in which I have been speaker. . Bayesian Voice Emotion Detection Applied to Robotics . Conference: BigThings 2019 . Language: Spanish . Link to the description of the talk . youtube: https://youtu.be/hMGppH6mmFI . Teaching a robot Guess Who? From Deep Learning to Brain Spikes . Language: English . Link to the description of the talk . youtube: https://youtu.be/63U2iCh-KD0 .",
+          "url": "https://eldarsilver.github.io/ruben.martinez/_pages/conferences.html",
+          "relUrl": "/_pages/conferences.html",
+          "date": ""
+      }
+      
+  
+
+  
 
   
   
@@ -136,7 +147,7 @@
   
 
   
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://eldarsilver.github.io/ruben.martinez/robots.txt",
