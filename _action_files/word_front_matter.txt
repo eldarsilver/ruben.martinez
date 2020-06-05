@@ -1,4 +1,4 @@
 ---
 layout: post
-image: ../images/qiskit.jpeg
+image: images/qiskit.jpeg
 ---
