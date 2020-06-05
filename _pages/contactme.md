@@ -3,6 +3,7 @@ layout: page
 title: Contact Me
 ---
 
+
 We can keep in touch using the following channels:
 
 * Email: rubensilver@gmail.com
@@ -11,4 +12,4 @@ We can keep in touch using the following channels:
 
 * Github: https://github.com/eldarsilver
 
-<img src="images/ruben.jpg" \>
+<img src="images/ruben.jpg">
