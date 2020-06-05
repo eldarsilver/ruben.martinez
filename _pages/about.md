@@ -28,6 +28,7 @@ Currently, I'm taking this great course in which I'm covering the math and stati
 ### Sequences, Time Series and Prediction (Tensorflow) 
 
 deeplearning.ai (Coursera)
+[](https://coursera.org/share/97ed885e9627ae5d451a6e375ae58430)
 
 ### Natural Language Processing in TensorFlow
 
