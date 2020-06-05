@@ -18,7 +18,7 @@ img.emoji{
   text-align: center;
   font-size: .8rem;
   font-style: italic;
-  color: light-grey;
+  color: #8cb1ba; // light-grey; 
 }
 
 .page-content {
@@ -206,6 +206,7 @@ table {
   white-space: nowrap;
   font-size: 75%;
   border:none;
+  bgcolor:#24a6c7 !important;
   th{
     text-align: center! important;
   }
