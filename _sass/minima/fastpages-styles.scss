@@ -31,7 +31,7 @@ img.emoji{
 
 // make non-headings slightly lighter
 .post-content p, .post-content li {
-   font-size: 20px;
+   font-size: 25px;
    color: white !important;
 }
 
@@ -79,7 +79,7 @@ li {
   }
   .post-meta-description {
     color: rgb(58, 58, 58); // rgb(171, 19, 44);
-    font-size: 20px;
+    font-size: 25px;
     margin-top:.05rem !important;
     margin-bottom:.05rem !important;
   }
@@ -112,8 +112,8 @@ details.description:not([open]) summary::after {
 // Adjust with of social media icons were getting cut off
 .social-media-list{
   .svg-icon {
-    width: 30px !important;
-    height: 28px !important;
+    width: 33px !important;
+    height: 31px !important;
   }
 }
 
@@ -213,6 +213,7 @@ table {
     text-overflow:ellipsis;
     overflow:hidden;
     max-width: 15em;
+    color:white !important;
   }
 }
 
