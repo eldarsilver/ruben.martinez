@@ -12,4 +12,6 @@ We can keep in touch using the following channels:
 
 * Github: https://github.com/eldarsilver
 
+* LinkedIn: Coming Soon
+
 <img src="../images/ruben.jpg" width="400" height="250">
