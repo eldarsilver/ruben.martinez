@@ -95,9 +95,9 @@ Offered by deeplearning.ai (Coursera)
 
 Offered by University of Toronto (edX)
 
-<a href="https://www.coursera.org/learn/ai-for-medical-diagnosis">Link to the Course Description</a> 
+<a href="https://courses.edx.org/courses/course-v1:University_of_TorontoX+UTQML101x+1T2019/course/">Link to the Course Description</a> 
 
-<a href="https://coursera.org/share/97ed885e9627ae5d451a6e375ae58430">Link to the Course Certificate</a>
+<a href="https://courses.edx.org/certificates/3c5c6c1ccfcf46b0bde59e391977e8d4">Link to the Course Certificate</a>
 
 ### Serverless Machine Learning with Tensorflow on Google Cloud Platform
 
