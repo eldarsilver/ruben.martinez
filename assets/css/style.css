@@ -341,7 +341,7 @@ img.emoji { display: inline !important; vertical-align: baseline !important; }
 
 .page-content { background-color: #07526e !important; -webkit-font-smoothing: antialiased !important; text-rendering: optimizeLegibility !important; color: white !important; font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important; }
 
-.post-content p, .post-content li { font-size: 25px; color: white !important; }
+.post-content p, .post-content li { font-size: 20px; color: white !important; }
 
 .post-link { font-weight: normal; }
 
@@ -363,7 +363,7 @@ pre { margin-bottom: 1.5rem !important; }
 
 li h3, li h4 { margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
-li .post-meta-description { color: #3a3a3a; font-size: 25px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
+li .post-meta-description { color: #3a3a3a; font-size: 20px; margin-top: .05rem !important; margin-bottom: .05rem !important; }
 
 details.description[open] summary::after { content: attr(data-open); }
 
