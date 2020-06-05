@@ -1,4 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://eldarsilver.github.io/ruben.martinez/feed.xml" rel="self" type="application/atom+xml" /><link href="https://eldarsilver.github.io/ruben.martinez/" rel="alternate" type="text/html" /><updated>2020-06-05T05:41:46-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/feed.xml</id><title type="html">Ruben Martínez Sánchez</title><subtitle>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let's share!</subtitle><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://eldarsilver.github.io/ruben.martinez/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://eldarsilver.github.io/ruben.martinez/jupyter/2020/02/20/test</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/jupyter/2020/02/20/test.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://eldarsilver.github.io/ruben.martinez/feed.xml" rel="self" type="application/atom+xml" /><link href="https://eldarsilver.github.io/ruben.martinez/" rel="alternate" type="text/html" /><updated>2020-06-05T05:51:15-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/feed.xml</id><title type="html">Ruben Martínez Sánchez</title><subtitle>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let's share!</subtitle><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 1</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 1" /><published>2020-06-01T00:00:00-05:00</published><updated>2020-06-01T00:00:00-05:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html">&lt;p&gt;Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación.&lt;/p&gt;
+
+&lt;p&gt;Comencemos por la pregunta más obvia. ¿Cuál es la principal diferencia entre la Computación Clásica y la Computación Cuántica?&lt;/p&gt;
+
+&lt;p&gt;Para abordar esa pregunta vamos a comenzar viendo cómo se almacena la información y cómo se tratan las distribuciones de probabilidad en Computación Clásica para en un siguiente artículo confrontarlo con la forma de trabajar en Computación Cuántica.&lt;/p&gt;
+
+&lt;h2 id=&quot;distribuciones-de-probabilidad-en-computación-clásica&quot;&gt;Distribuciones de Probabilidad en Computación Clásica&lt;/h2&gt;
+
+&lt;p&gt;Un primer aspecto diferenciador es cómo se representa la unidad mínima de información. En &lt;strong&gt;Computación Clásica&lt;/strong&gt;, la que se emplea para la arquitectura y el software presente en los servidores, ordenadores de sobremesa, portátiles, dispositivos móviles, el procesamiento de información se realiza manipulando bits, de forma que un &lt;strong&gt;bit&lt;/strong&gt; es un fragmento de información que puede tomar o bien el valor 1 o el valor 0, pero sólo uno de esos dos valores.&lt;/p&gt;
+
+&lt;p&gt;Dentro de este enfoque, vamos a tratar el tema de &lt;strong&gt;distribuciones de probabilidad clásica&lt;/strong&gt; poniendo el ejemplo del lanzamiento de una moneda que está sesgada. De manera que vamos a representar el resultado de dicho lanzamiento mediante una variable aleatoria X que tomará el valor “0” cuando salga “cara” y el valor “1” cuando se obtenga “cruz”.&lt;/p&gt;
+
+&lt;p&gt;Formalmente, por cada lanzamiento de moneda se puede decir que se obtendrá “cara” con una probabilidad &lt;strong&gt;P(X=0) =&lt;/strong&gt; (p_{0}) y “cruz” con &lt;strong&gt;P(X=1) =&lt;/strong&gt; (p_{1}) siendo (p_{i}) &amp;gt;= 0 (es decir la probabilidad de obtener “cara” o de obtener “cruz” será siempre mayor o igual que 0) y (p_{i} = 1).&lt;/p&gt;
+
+&lt;p&gt;Vamos a extraer muestras de una distribución aleatoria binomial definida como:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image1.png&quot; alt=&quot;&quot; /&gt; donde ‘N’ es el número de éxitos, ‘n’ es el número de intentos y ‘p’ es la probabilidad de éxito en cada intento.&lt;/p&gt;
+
+&lt;p&gt;En el siguiente ejemplo el número de intentos será 1 y la probabilidad de éxito (prob_1) será 0.2:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A continuación, podemos comprobar como la suma de las observaciones de 1’s y de 0’s suman 1:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Si queremos representar visualmente (p_{o}) y (p_{1}) veremos que estarán restringidos al cuadrante positivo ya que deben ser mayores o iguales que 0 debido al requisito de normalización. En el siguiente gráfico podemos comprobar como todas las distribuciones de probabilidad del lanzamiento de monedas sesgadas y no segadas caen dentro de la siguiente línea recta del cuadrante positivo:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Una forma de representar probabilidades es en forma de vector columnar &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image7.png&quot; alt=&quot;&quot; /&gt;, de forma que ponemos una flecha encima del nombre de la variable ‘p’ para diferenciarlo de un escalar. En este caso tenemos un vector representando a una distribución de probabilidad y cuando esto ocurre, recibe el nombre de &lt;strong&gt;vector estocástico&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;El requisito de normalización indica que la norma del vector está restringida a 1 en la norma (l_{1})lo que se puede expresar como:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pero además, como (p_{\text{i\ }})&amp;gt;= 0 estaremos restringidos al cuadrante positivo del círculo unitario. Esto se puede comprobar calculando la norma (l_{1})del vector ‘p’ donde prob_0 = 0.8 y prob_1 = 0.2.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El primer elemento del vector ‘p’ se corresponderá con la probabilidad de obtener cara (prob_0) y el segundo con la probabilidad de obtener cruz (prob_1). Si quisiéramos extraer, por ejemplo, prob_0 podríamos proyectar el vector ‘p’ sobre el primer eje. Esa proyección se corresponde con la matriz de transformación M_0 = &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image4.png&quot; alt=&quot;&quot; /&gt;. Si calculamos la longitud de la norma (l_{1}) del resultado de aplicar la matriz M_0 al vector ‘p’ obtendremos la probabilidad prob_0.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Para obtener la probabilidad de obtener cruz tendríamos que proyectar el vector ‘p’ sobre el segundo eje de la siguiente forma:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Esto nos lleva a la cuestión de &lt;strong&gt;cómo transformar una distribución de probabilidad en otra&lt;/strong&gt;, por ejemplo, para cambiar el sesgo de una moneda.&lt;/p&gt;
+
+&lt;p&gt;Hemos visto que una distribución de probabilidad se puede representar como un vector estocástico y para modificarlo podemos multiplicar una matriz de transformación sobre dicho vector siempre que esa matriz cumpla unos requisitos:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;Como son que cada una de sus columnas debe sumar 1 (la suma de todas las probabilidades debe ser 1).&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;Además debemos multiplicar esa matriz por la izquierda del vector.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Esta matriz recibe el nombre de &lt;strong&gt;left stochastic matrix.&lt;/strong&gt; En el siguiente ejemplo veremos como transformar un vector estocástico ‘p’ correspondiente a una moneda no sesga (50% de probabilidad de obtener cara y 50% de obtener cruz) en otra que sí está sesgada después de multiplicar a ‘p’ por la izquierda por una left stochastic matrix:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Para terminar este primer artículo, vamos a introducir el concepto de Entropía como medida de desorden o en nuestro caso, de falta de predictibilidad cuya definición formal será:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En el siguiente gráfico comprobaremos cómo la Entropía será máxima en el caso de una moneda no sesgada, que se corresponde con una distribución uniforme:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En siguientes artículos comenzaremos a movernos por el apasionante mundo de la Computación Cuántica haciendo paralelismos con los conceptos que acabamos de ver. ¡No te los pierdas!&lt;/p&gt;</content><author><name></name></author><summary type="html">Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación.</summary></entry><entry><title type="html">Fastpages Notebook Blog Post</title><link href="https://eldarsilver.github.io/ruben.martinez/jupyter/2020/02/20/test.html" rel="alternate" type="text/html" title="Fastpages Notebook Blog Post" /><published>2020-02-20T00:00:00-06:00</published><updated>2020-02-20T00:00:00-06:00</updated><id>https://eldarsilver.github.io/ruben.martinez/jupyter/2020/02/20/test</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/jupyter/2020/02/20/test.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -730,7 +807,69 @@ And another {% fn 2 %}
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://eldarsilver.github.io/ruben.martinez/images/chart-preview.png" /><media:content medium="image" url="https://eldarsilver.github.io/ruben.martinez/images/chart-preview.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">An Example Markdown Post</title><link href="https://eldarsilver.github.io/ruben.martinez/markdown/2020/01/14/test-markdown-post.html" rel="alternate" type="text/html" title="An Example Markdown Post" /><published>2020-01-14T00:00:00-06:00</published><updated>2020-01-14T00:00:00-06:00</updated><id>https://eldarsilver.github.io/ruben.martinez/markdown/2020/01/14/test-markdown-post</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/markdown/2020/01/14/test-markdown-post.html">&lt;h1 id=&quot;example-markdown-post&quot;&gt;Example Markdown Post&lt;/h1&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://eldarsilver.github.io/ruben.martinez/images/chart-preview.png" /><media:content medium="image" url="https://eldarsilver.github.io/ruben.martinez/images/chart-preview.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducción A La Computación Cuántica Con Qiskit 2</title><link href="https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html" rel="alternate" type="text/html" title="Introducción A La Computación Cuántica Con Qiskit 2" /><published>2020-02-01T00:00:00-06:00</published><updated>2020-02-01T00:00:00-06:00</updated><id>https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html">&lt;p&gt;En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma.&lt;/p&gt;
+
+&lt;p&gt;El objetivo de esta nueva entrega es el de ampliar nuestra perspectiva a la hora de abordar la modelización de problemas. Comencemos.&lt;/p&gt;
+
+&lt;h2 id=&quot;qubits&quot;&gt;Qubits&lt;/h2&gt;
+
+&lt;p&gt;La &lt;strong&gt;Computación Cuántica&lt;/strong&gt; emplea, como se comentó anteriormente, principios presentes en física cuántica como los fenómenos de superposición y entrelazamiento, entre otros, para llevar a cabo cálculos de una forma más eficiente que con la computación tradicional. Esto lo consigue empleando como unidad de información el &lt;strong&gt;qubit&lt;/strong&gt;, que es un sistema de mecánica cuántica de 2 estados, pero que cuando es observado y medido puede tomar cualquier posible combinación de esos 2 valores.&lt;/p&gt;
+
+&lt;p&gt;En el artículo inicial se presentó el ejemplo del lanzamiento de una moneda como un caso que podía modelizarse como una distribución de probabilidad en Computación Clásica y se representaba como un vector columnar.&lt;/p&gt;
+
+&lt;p&gt;Como primera aproximación podemos acercarnos al concepto de &lt;strong&gt;estado cuántico&lt;/strong&gt; también como una distribución de probabilidad representada a través de un vector columnar que para identificarlo y distinguirlo del vector de Computación Clásica se empleará el denominado &lt;strong&gt;ket&lt;/strong&gt; de la &lt;strong&gt;notación Dirac.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Siguiendo esta nomenclatura, el ket que representa el estado de un qubit se escribirá de la siguiente forma:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Donde (a_{0}), (a_{1\ } \in \text{\ ℂ}) y se denominan amplitudes de probabilidad de forma que cada amplitud estará asociada a un estado cuántico. La diferencia con el modelo clásico es que ahora el requisito de normalización es en la norma (l_{2}) en vez de en (l_{1}). Formalmente esto se traduce en que la raíz cuadrada de la suma de los cuadrados de los valores absolutos de las amplitudes será igual a 1:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Profundizando en cómo representar un estado cuántico, hay que decir que se emplean como vectores de base canónica en 2 dimensiones los kets 0 y 1 cuya notación Dirac será la siguiente:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Combinando lo que hemos visto sobre cómo representar el estado de un qubit con la notación de la base canónica en computación cuántica, podemos describir el estado de dicho qubit (\psi)empleando esa base canónica de la siguiente forma:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(\psi)&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;La expansión del estado del qubit (\psi)en una base nos lleva a unos de los fenómenos más importantes en mecánica cuántica, la &lt;strong&gt;Superposición&lt;/strong&gt;. Si observamos una muestra de esa distribución de probabilidad que representa el qubit y la medimos, obtendremos la salida ‘0’ con una probabilidad igual al cuadrado del valor absoluto de la amplitud que acompaña a la base canónica ket 0, es decir, ({&lt;/td&gt;
+      &lt;td&gt;a_{0}&lt;/td&gt;
+      &lt;td&gt;}^{2}) y que obtendremos un ‘1’ con probabilidad ({&lt;/td&gt;
+      &lt;td&gt;a_{1}&lt;/td&gt;
+      &lt;td&gt;}^{2}) (el cuadrado del valor absoluto de amplitud que acompaña al ket 1). Esta regla que nos permite calcular la probabilidad con la que se obtendrá cada uno de los estados cuánticos recibe el nombre de &lt;strong&gt;regla de Born&lt;/strong&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;circuitos-cuánticos-con-qiskit&quot;&gt;Circuitos Cuánticos con Qiskit&lt;/h2&gt;
+
+&lt;p&gt;Como la idea es ir viendo cómo implementar estos conceptos de teoría empleando el framework Qiskit, vamos a comenzar simulando el ejemplo del lanzamiento de una moneda totalmente sesgada donde se obtendrá “cara” en el 100% de los lanzamientos, por lo que el ket &lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;La librería ‘&lt;strong&gt;BasicAer&lt;/strong&gt;’ proporciona un framework de simulación para la pila de software de Qiskit. En concreto, mediante su método ‘&lt;strong&gt;get_backed&lt;/strong&gt;’ permite definir el entorno de ejecución que podrá ser o bien un simulador o un procesador cuántico real. En este caso, se está indicando que se utilizará el simulador ‘&lt;strong&gt;qasm_simulator&lt;/strong&gt;’, por lo que la ejecución no se realizará en un entorno cuántico auténtico pero tratará de imitarlo y devolverá un diccionario con el contador de las medidas realizadas que estarán almacenadas en registros clásicos del circuito cuántico.&lt;/p&gt;
+
+&lt;p&gt;En la variable ‘qr’ se almacenará la referencia a un registro cuántico que permitirá almacenar un qubit. Mientras que la variable ‘cr’ se empleará para manejar un registro clásico que contendrá un bit. Por último, en la variable ‘circuit’ se define un circuito cuántico que inicialmente dispondrá del registro cuántico ‘qr’ y del registro clásico ‘cr’.&lt;/p&gt;
+
+&lt;p&gt;Hay que decir que cualquier &lt;strong&gt;qubit&lt;/strong&gt; estará siempre &lt;strong&gt;inicializado por defecto en el ket 0&lt;/strong&gt; por lo que si lo medimos obtendremos el resultado deseado de una moneda totalmente sesgada que devuelva siempre ‘cara’. Para realizar esa medición emplearemos el método ‘&lt;strong&gt;measure&lt;/strong&gt;’ del circuito cuántico que hemos definido en la variable ‘circuit’:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;El método ‘measure’ recibirá el qubit que hemos almacenado en el registro cuántico ‘qr’, y cuando sea ejecutado el circuito, realizará una medición mediante la observación del estado cuántico lo que provocará que dicho estado colapse y se obtenga un valor concreto que será almacenado en el registro clásico definido en la variable ‘cr’.&lt;/p&gt;
+
+&lt;p&gt;Una vez que se ha añadido esa operación de medición al circuito procederemos a ejecutarlo 50 veces (parámetro &lt;strong&gt;shots&lt;/strong&gt;=50) mediante la librería ‘&lt;strong&gt;execute&lt;/strong&gt;’ de Qiskit almacenado la referencia a esa llamada en la variable ‘job’. Dicho método ‘execute’ recibirá el circuito a ejecutar y el backend de ejecución. Una vez hecho eso, se guardará en la variable ‘result’ la llamada al método ‘&lt;strong&gt;result&lt;/strong&gt;’ del objeto ‘job’. Por último, como estamos empleando el ‘qasm_simulator’ dispondremos del método ‘&lt;strong&gt;get_counts&lt;/strong&gt;’ para obtener un diccionario donde cada clave será un estado y su valor el número de ocurrencias del mismo durante los experimentos (shots). Podremos comprobar que las 50 veces que se repite la ejecución del circuito cuántico y se realiza su medición se obtiene siempre un ‘0’. Si estas ejecuciones se hubieran realizado en un procesador cuántico real podríamos encontrar que esos resultados no coincidirían exactamente con estas medidas debido entre otros factores al ruido.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Acabamos de definir y ejecutar nuestro primer circuito cuántico para simular el problema del lanzamiento de una moneda sesgada. Y como probablemente os hayáis quedado con ganas de seguir jugando os emplazo al siguiente artículo de esta serie donde continuaremos profundizando en este apasionante campo.&lt;/p&gt;</content><author><name></name></author><summary type="html">En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma.</summary></entry><entry><title type="html">An Example Markdown Post</title><link href="https://eldarsilver.github.io/ruben.martinez/markdown/2020/01/14/test-markdown-post.html" rel="alternate" type="text/html" title="An Example Markdown Post" /><published>2020-01-14T00:00:00-06:00</published><updated>2020-01-14T00:00:00-06:00</updated><id>https://eldarsilver.github.io/ruben.martinez/markdown/2020/01/14/test-markdown-post</id><content type="html" xml:base="https://eldarsilver.github.io/ruben.martinez/markdown/2020/01/14/test-markdown-post.html">&lt;h1 id=&quot;example-markdown-post&quot;&gt;Example Markdown Post&lt;/h1&gt;
 
 &lt;h2 id=&quot;basic-setup&quot;&gt;Basic setup&lt;/h2&gt;
 

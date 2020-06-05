@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 1 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación." />
+<meta property="og:description" content="Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-01T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 1","dateModified":"2020-06-01T00:00:00-05:00","datePublished":"2020-06-01T00:00:00-05:00","url":"https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ruben.martinez/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" /><link rel="shortcut icon" type="image/x-icon" href="/ruben.martinez/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 1 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación." />
+<meta property="og:description" content="Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-01T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 1","dateModified":"2020-06-01T00:00:00-05:00","datePublished":"2020-06-01T00:00:00-05:00","url":"https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ruben.martinez/">Ruben Martínez Sánchez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ruben.martinez/about/">About Me</a><a class="page-link" href="/ruben.martinez/search/">Search</a><a class="page-link" href="/ruben.martinez/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Introducción A La Computación Cuántica Con Qiskit 1</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-01T00:00:00-05:00" itemprop="datePublished">
+        Jun 1, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Aquí comienza una serie de artículos en los que se pretende hacer un recorrido por los principios básicos de la Computación Cuántica. Y como la mejor forma de aprender es hacerlo de forma práctica, vamos a acercarnos a este paradigma empleando Qiskit, el framework que ofrece IBM para desarrollar algoritmos que se aprovechen de las particularidades que ofrece la física cuántica aplicada a la computación.</p>
+
+<p>Comencemos por la pregunta más obvia. ¿Cuál es la principal diferencia entre la Computación Clásica y la Computación Cuántica?</p>
+
+<p>Para abordar esa pregunta vamos a comenzar viendo cómo se almacena la información y cómo se tratan las distribuciones de probabilidad en Computación Clásica para en un siguiente artículo confrontarlo con la forma de trabajar en Computación Cuántica.</p>
+
+<h2 id="distribuciones-de-probabilidad-en-computación-clásica">Distribuciones de Probabilidad en Computación Clásica</h2>
+
+<p>Un primer aspecto diferenciador es cómo se representa la unidad mínima de información. En <strong>Computación Clásica</strong>, la que se emplea para la arquitectura y el software presente en los servidores, ordenadores de sobremesa, portátiles, dispositivos móviles, el procesamiento de información se realiza manipulando bits, de forma que un <strong>bit</strong> es un fragmento de información que puede tomar o bien el valor 1 o el valor 0, pero sólo uno de esos dos valores.</p>
+
+<p>Dentro de este enfoque, vamos a tratar el tema de <strong>distribuciones de probabilidad clásica</strong> poniendo el ejemplo del lanzamiento de una moneda que está sesgada. De manera que vamos a representar el resultado de dicho lanzamiento mediante una variable aleatoria X que tomará el valor “0” cuando salga “cara” y el valor “1” cuando se obtenga “cruz”.</p>
+
+<p>Formalmente, por cada lanzamiento de moneda se puede decir que se obtendrá “cara” con una probabilidad <strong>P(X=0) =</strong> (p_{0}) y “cruz” con <strong>P(X=1) =</strong> (p_{1}) siendo (p_{i}) &gt;= 0 (es decir la probabilidad de obtener “cara” o de obtener “cruz” será siempre mayor o igual que 0) y (p_{i} = 1).</p>
+
+<p>Vamos a extraer muestras de una distribución aleatoria binomial definida como:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image1.png" alt="" /> donde ‘N’ es el número de éxitos, ‘n’ es el número de intentos y ‘p’ es la probabilidad de éxito en cada intento.</p>
+
+<p>En el siguiente ejemplo el número de intentos será 1 y la probabilidad de éxito (prob_1) será 0.2:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image5.png" alt="" /></p>
+
+<p>A continuación, podemos comprobar como la suma de las observaciones de 1’s y de 0’s suman 1:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image2.png" alt="" /></p>
+
+<p>Si queremos representar visualmente (p_{o}) y (p_{1}) veremos que estarán restringidos al cuadrante positivo ya que deben ser mayores o iguales que 0 debido al requisito de normalización. En el siguiente gráfico podemos comprobar como todas las distribuciones de probabilidad del lanzamiento de monedas sesgadas y no segadas caen dentro de la siguiente línea recta del cuadrante positivo:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image6.png" alt="" /></p>
+
+<p>Una forma de representar probabilidades es en forma de vector columnar <img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image7.png" alt="" />, de forma que ponemos una flecha encima del nombre de la variable ‘p’ para diferenciarlo de un escalar. En este caso tenemos un vector representando a una distribución de probabilidad y cuando esto ocurre, recibe el nombre de <strong>vector estocástico</strong>.</p>
+
+<p>El requisito de normalización indica que la norma del vector está restringida a 1 en la norma (l_{1})lo que se puede expresar como:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image8.png" alt="" /></p>
+
+<p>Pero además, como (p_{\text{i\ }})&gt;= 0 estaremos restringidos al cuadrante positivo del círculo unitario. Esto se puede comprobar calculando la norma (l_{1})del vector ‘p’ donde prob_0 = 0.8 y prob_1 = 0.2.</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image10.png" alt="" /></p>
+
+<p>El primer elemento del vector ‘p’ se corresponderá con la probabilidad de obtener cara (prob_0) y el segundo con la probabilidad de obtener cruz (prob_1). Si quisiéramos extraer, por ejemplo, prob_0 podríamos proyectar el vector ‘p’ sobre el primer eje. Esa proyección se corresponde con la matriz de transformación M_0 = <img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image4.png" alt="" />. Si calculamos la longitud de la norma (l_{1}) del resultado de aplicar la matriz M_0 al vector ‘p’ obtendremos la probabilidad prob_0.</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image12.png" alt="" /></p>
+
+<p>Para obtener la probabilidad de obtener cruz tendríamos que proyectar el vector ‘p’ sobre el segundo eje de la siguiente forma:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image13.png" alt="" /></p>
+
+<p>Esto nos lleva a la cuestión de <strong>cómo transformar una distribución de probabilidad en otra</strong>, por ejemplo, para cambiar el sesgo de una moneda.</p>
+
+<p>Hemos visto que una distribución de probabilidad se puede representar como un vector estocástico y para modificarlo podemos multiplicar una matriz de transformación sobre dicho vector siempre que esa matriz cumpla unos requisitos:</p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>Como son que cada una de sus columnas debe sumar 1 (la suma de todas las probabilidades debe ser 1).</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Además debemos multiplicar esa matriz por la izquierda del vector.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Esta matriz recibe el nombre de <strong>left stochastic matrix.</strong> En el siguiente ejemplo veremos como transformar un vector estocástico ‘p’ correspondiente a una moneda no sesga (50% de probabilidad de obtener cara y 50% de obtener cruz) en otra que sí está sesgada después de multiplicar a ‘p’ por la izquierda por una left stochastic matrix:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image3.png" alt="" /></p>
+
+<p>Para terminar este primer artículo, vamos a introducir el concepto de Entropía como medida de desorden o en nuestro caso, de falta de predictibilidad cuya definición formal será:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image11.png" alt="" /></p>
+
+<p>En el siguiente gráfico comprobaremos cómo la Entropía será máxima en el caso de una moneda no sesgada, que se corresponde con una distribución uniforme:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-1/media/image9.png" alt="" /></p>
+
+<p>En siguientes artículos comenzaremos a movernos por el apasionante mundo de la Computación Cuántica haciendo paralelismos con los conceptos que acabamos de ver. ¡No te los pierdas!</p>
+
+  </div><a class="u-url" href="/ruben.martinez/2020/06/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-1.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ruben.martinez/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ruben.martinez/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let&#39;s share!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

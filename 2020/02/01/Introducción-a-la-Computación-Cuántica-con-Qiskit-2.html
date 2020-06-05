@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 2 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma." />
+<meta property="og:description" content="En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-01T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 2","dateModified":"2020-02-01T00:00:00-06:00","datePublished":"2020-02-01T00:00:00-06:00","url":"https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ruben.martinez/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" /><link rel="shortcut icon" type="image/x-icon" href="/ruben.martinez/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 2 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 2" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma." />
+<meta property="og:description" content="En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-02-01T00:00:00-06:00" />
+<script type="application/ld+json">
+{"description":"En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 2","dateModified":"2020-02-01T00:00:00-06:00","datePublished":"2020-02-01T00:00:00-06:00","url":"https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ruben.martinez/">Ruben Martínez Sánchez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ruben.martinez/about/">About Me</a><a class="page-link" href="/ruben.martinez/search/">Search</a><a class="page-link" href="/ruben.martinez/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Introducción A La Computación Cuántica Con Qiskit 2</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-02-01T00:00:00-06:00" itemprop="datePublished">
+        Feb 1, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>En el primer artículo de esta serie se expuso cómo la unidad fundamental de información en sistemas de Computación Clásica era el bit y cómo se tratan las distribuciones de probabilidad en ese paradigma.</p>
+
+<p>El objetivo de esta nueva entrega es el de ampliar nuestra perspectiva a la hora de abordar la modelización de problemas. Comencemos.</p>
+
+<h2 id="qubits">Qubits</h2>
+
+<p>La <strong>Computación Cuántica</strong> emplea, como se comentó anteriormente, principios presentes en física cuántica como los fenómenos de superposición y entrelazamiento, entre otros, para llevar a cabo cálculos de una forma más eficiente que con la computación tradicional. Esto lo consigue empleando como unidad de información el <strong>qubit</strong>, que es un sistema de mecánica cuántica de 2 estados, pero que cuando es observado y medido puede tomar cualquier posible combinación de esos 2 valores.</p>
+
+<p>En el artículo inicial se presentó el ejemplo del lanzamiento de una moneda como un caso que podía modelizarse como una distribución de probabilidad en Computación Clásica y se representaba como un vector columnar.</p>
+
+<p>Como primera aproximación podemos acercarnos al concepto de <strong>estado cuántico</strong> también como una distribución de probabilidad representada a través de un vector columnar que para identificarlo y distinguirlo del vector de Computación Clásica se empleará el denominado <strong>ket</strong> de la <strong>notación Dirac.</strong></p>
+
+<p>Siguiendo esta nomenclatura, el ket que representa el estado de un qubit se escribirá de la siguiente forma:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image2.png" alt="" /></p>
+
+<p>Donde (a_{0}), (a_{1\ } \in \text{\ ℂ}) y se denominan amplitudes de probabilidad de forma que cada amplitud estará asociada a un estado cuántico. La diferencia con el modelo clásico es que ahora el requisito de normalización es en la norma (l_{2}) en vez de en (l_{1}). Formalmente esto se traduce en que la raíz cuadrada de la suma de los cuadrados de los valores absolutos de las amplitudes será igual a 1:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image5.png" alt="" /></p>
+
+<p>Profundizando en cómo representar un estado cuántico, hay que decir que se emplean como vectores de base canónica en 2 dimensiones los kets 0 y 1 cuya notación Dirac será la siguiente:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image7.png" alt="" /></p>
+
+<p>Combinando lo que hemos visto sobre cómo representar el estado de un qubit con la notación de la base canónica en computación cuántica, podemos describir el estado de dicho qubit (\psi)empleando esa base canónica de la siguiente forma:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image3.png" alt="" /></p>
+
+<p>(\psi)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>La expansión del estado del qubit (\psi)en una base nos lleva a unos de los fenómenos más importantes en mecánica cuántica, la <strong>Superposición</strong>. Si observamos una muestra de esa distribución de probabilidad que representa el qubit y la medimos, obtendremos la salida ‘0’ con una probabilidad igual al cuadrado del valor absoluto de la amplitud que acompaña a la base canónica ket 0, es decir, ({</td>
+      <td>a_{0}</td>
+      <td>}^{2}) y que obtendremos un ‘1’ con probabilidad ({</td>
+      <td>a_{1}</td>
+      <td>}^{2}) (el cuadrado del valor absoluto de amplitud que acompaña al ket 1). Esta regla que nos permite calcular la probabilidad con la que se obtendrá cada uno de los estados cuánticos recibe el nombre de <strong>regla de Born</strong>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="circuitos-cuánticos-con-qiskit">Circuitos Cuánticos con Qiskit</h2>
+
+<p>Como la idea es ir viendo cómo implementar estos conceptos de teoría empleando el framework Qiskit, vamos a comenzar simulando el ejemplo del lanzamiento de una moneda totalmente sesgada donde se obtendrá “cara” en el 100% de los lanzamientos, por lo que el ket <img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image1.png" alt="" /></p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image6.png" alt="" /></p>
+
+<p>La librería ‘<strong>BasicAer</strong>’ proporciona un framework de simulación para la pila de software de Qiskit. En concreto, mediante su método ‘<strong>get_backed</strong>’ permite definir el entorno de ejecución que podrá ser o bien un simulador o un procesador cuántico real. En este caso, se está indicando que se utilizará el simulador ‘<strong>qasm_simulator</strong>’, por lo que la ejecución no se realizará en un entorno cuántico auténtico pero tratará de imitarlo y devolverá un diccionario con el contador de las medidas realizadas que estarán almacenadas en registros clásicos del circuito cuántico.</p>
+
+<p>En la variable ‘qr’ se almacenará la referencia a un registro cuántico que permitirá almacenar un qubit. Mientras que la variable ‘cr’ se empleará para manejar un registro clásico que contendrá un bit. Por último, en la variable ‘circuit’ se define un circuito cuántico que inicialmente dispondrá del registro cuántico ‘qr’ y del registro clásico ‘cr’.</p>
+
+<p>Hay que decir que cualquier <strong>qubit</strong> estará siempre <strong>inicializado por defecto en el ket 0</strong> por lo que si lo medimos obtendremos el resultado deseado de una moneda totalmente sesgada que devuelva siempre ‘cara’. Para realizar esa medición emplearemos el método ‘<strong>measure</strong>’ del circuito cuántico que hemos definido en la variable ‘circuit’:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image8.png" alt="" /></p>
+
+<p>El método ‘measure’ recibirá el qubit que hemos almacenado en el registro cuántico ‘qr’, y cuando sea ejecutado el circuito, realizará una medición mediante la observación del estado cuántico lo que provocará que dicho estado colapse y se obtenga un valor concreto que será almacenado en el registro clásico definido en la variable ‘cr’.</p>
+
+<p>Una vez que se ha añadido esa operación de medición al circuito procederemos a ejecutarlo 50 veces (parámetro <strong>shots</strong>=50) mediante la librería ‘<strong>execute</strong>’ de Qiskit almacenado la referencia a esa llamada en la variable ‘job’. Dicho método ‘execute’ recibirá el circuito a ejecutar y el backend de ejecución. Una vez hecho eso, se guardará en la variable ‘result’ la llamada al método ‘<strong>result</strong>’ del objeto ‘job’. Por último, como estamos empleando el ‘qasm_simulator’ dispondremos del método ‘<strong>get_counts</strong>’ para obtener un diccionario donde cada clave será un estado y su valor el número de ocurrencias del mismo durante los experimentos (shots). Podremos comprobar que las 50 veces que se repite la ejecución del circuito cuántico y se realiza su medición se obtiene siempre un ‘0’. Si estas ejecuciones se hubieran realizado en un procesador cuántico real podríamos encontrar que esos resultados no coincidirían exactamente con estas medidas debido entre otros factores al ruido.</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-02-01-Introducción-a-la-Computación-Cuántica-con-Qiskit-2/media/image4.png" alt="" /></p>
+
+<p>Acabamos de definir y ejecutar nuestro primer circuito cuántico para simular el problema del lanzamiento de una moneda sesgada. Y como probablemente os hayáis quedado con ganas de seguir jugando os emplazo al siguiente artículo de esta serie donde continuaremos profundizando en este apasionante campo.</p>
+
+  </div><a class="u-url" href="/ruben.martinez/2020/02/01/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-2.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ruben.martinez/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ruben.martinez/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let&#39;s share!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
