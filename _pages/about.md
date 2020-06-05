@@ -25,10 +25,15 @@ permalink: /about/
 
 Currently, I'm taking this great course in which I'm covering the math and statistics behind topics like Computer Vision, NLP (Transformers,  BERT, etc), Reinforcement Learning, GANs, Variational Auto Encoders, Causality, etc. I have to say that it's being a great experience!!
 
+### AI For Medical Diagnosis (Tensorflow)
+
+deeplearning.ai (Coursera)
+
+<a href="https://coursera.org/share/97ed885e9627ae5d451a6e375ae58430">Certificate</a>
+
 ### Sequences, Time Series and Prediction (Tensorflow) 
 
 deeplearning.ai (Coursera)
-[](https://coursera.org/share/97ed885e9627ae5d451a6e375ae58430)
 
 ### Natural Language Processing in TensorFlow
 
