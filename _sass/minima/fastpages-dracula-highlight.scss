@@ -4,7 +4,7 @@
 $dt-gray-dark: #282a36;  // Background
 $dt-code-cell-background: #323443;
 $dt-gray: #44475a;       // Current Line & Selection #44475a
-$dt-gray-light: #f8f8f2; // Foreground #f8f8f2;
+$dt-gray-light: #35acb5; // Foreground #f8f8f2;
 $dt-blue: #6272a4;       // Comment
 $dt-cyan: #8be9fd;
 $dt-green: #50fa7b;
@@ -16,7 +16,7 @@ $dt-yellow: #f1fa8c;
 $dt-green-light: rgb(172, 229, 145);
 
 .language-python + .language-plaintext {
-    border-left: 1px solid grey;
+    border-left: 1px solid black;
     margin-left: 1rem !important;
 }
 
@@ -28,7 +28,7 @@ $dt-green-light: rgb(172, 229, 145);
 }
 
 .language-python + .language-plaintext code { background-color: #16c2d9 !important; }
-.language-python + .language-plaintext pre  { background-color: #16c2d9 !important; }
+.language-python + .language-plaintext pre  { background-color: green !important; }
 
 // for Jupyter Notebook HTML Code Cells modified from https://www.fast.ai/public/css/hyde.css
 
