@@ -4,7 +4,6 @@ title: About Me
 permalink: /about/
 ---
 
-# About me
 
 * Computer Engineer by Universidad Politécnica de Madrid (UPM) and Master in Data Science by Datahack.
 
@@ -30,4 +29,46 @@ Currently, I'm taking this great course in which I'm covering the math and stati
 
 deeplearning.ai (Coursera)
 
+## Natural Language Processing in TensorFlow
 
+deeplearning.ai (Coursera)
+
+## Convolutional Neural Networks in TensorFlow
+
+deeplearning.ai (Coursera)
+
+## Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
+
+deeplearning.ai (Coursera)
+
+## Convolutional Neural Networks
+
+deeplearning.ai (Coursera)
+
+## Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
+
+deeplearning.ai (Coursera)
+
+## UTQML101x: Quantum Machine Learning
+
+University of Toronto (edX)
+
+## Serverless Machine Learning with Tensorflow on Google Cloud Platform
+
+Google Cloud Training (Coursera)
+
+## Launching into Machine Learning on Google Cloud Platform
+
+Google Cloud Training (Coursera)
+
+## Serverless Machine Learning with Tensorflow on Google Cloud Platform
+
+Google Cloud Training (Coursera)
+
+## Launching into Machine Learning on Google Cloud Platform
+
+Google Cloud Training (Coursera)
+
+## Machine Learning Foundations: A Case Study Approach
+
+University of Washington (Coursera)
