@@ -21,54 +21,54 @@ permalink: /about/
 
 # Courses
 
-## Tokyo Data Science (https://tokyodatascience.com/)
+### Tokyo Data Science (https://tokyodatascience.com/)
 
 Currently, I'm taking this great course in which I'm covering the math and statistics behind topics like Computer Vision, NLP (Transformers,  BERT, etc), Reinforcement Learning, GANs, Variational Auto Encoders, Causality, etc. I have to say that it's being a great experience!!
 
-## Sequences, Time Series and Prediction (Tensorflow) 
+### Sequences, Time Series and Prediction (Tensorflow) 
 
 deeplearning.ai (Coursera)
 
-## Natural Language Processing in TensorFlow
+### Natural Language Processing in TensorFlow
 
 deeplearning.ai (Coursera)
 
-## Convolutional Neural Networks in TensorFlow
+### Convolutional Neural Networks in TensorFlow
 
 deeplearning.ai (Coursera)
 
-## Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
+### Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning
 
 deeplearning.ai (Coursera)
 
-## Convolutional Neural Networks
+### Convolutional Neural Networks
 
 deeplearning.ai (Coursera)
 
-## Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
+### Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
 
 deeplearning.ai (Coursera)
 
-## UTQML101x: Quantum Machine Learning
+### UTQML101x: Quantum Machine Learning
 
 University of Toronto (edX)
 
-## Serverless Machine Learning with Tensorflow on Google Cloud Platform
+### Serverless Machine Learning with Tensorflow on Google Cloud Platform
 
 Google Cloud Training (Coursera)
 
-## Launching into Machine Learning on Google Cloud Platform
+### Launching into Machine Learning on Google Cloud Platform
 
 Google Cloud Training (Coursera)
 
-## Serverless Machine Learning with Tensorflow on Google Cloud Platform
+### Serverless Machine Learning with Tensorflow on Google Cloud Platform
 
 Google Cloud Training (Coursera)
 
-## Launching into Machine Learning on Google Cloud Platform
+### Launching into Machine Learning on Google Cloud Platform
 
 Google Cloud Training (Coursera)
 
-## Machine Learning Foundations: A Case Study Approach
+### Machine Learning Foundations: A Case Study Approach
 
 University of Washington (Coursera)
