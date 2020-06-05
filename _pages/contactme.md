@@ -8,10 +8,10 @@ We can keep in touch using the following channels:
 
 * Email: rubensilver@gmail.com
 
-* Twitter: @eldarsilver
+* Twitter: <a href="https://twitter.com/eldarsilver">@eldarsilver</a>
 
-* Github: https://github.com/eldarsilver
+* Github: <a href="https://github.com/eldarsilver">https://github.com/eldarsilver</a>
 
 * LinkedIn: Coming Soon
 
-<img src="../images/ruben.jpg" width="400" height="250">
+<img src="../images/ruben.jpg" width="500" height="300">
