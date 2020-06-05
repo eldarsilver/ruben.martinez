@@ -14,4 +14,4 @@ We can keep in touch using the following channels:
 
 * LinkedIn: Coming Soon
 
-<img src="../images/ruben.jpg" width="500" height="300">
+<img src="../images/ruben.jpg" width="500" height="270">
