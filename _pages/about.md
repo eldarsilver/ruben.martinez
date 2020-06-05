@@ -23,6 +23,8 @@ permalink: /about/
 
 ### Tokyo Data Science (https://tokyodatascience.com/)
 
+<a href="https://tokyodatascience.com/">Link to the Course Web Page</a> 
+
 Currently, I'm taking this great course in which I'm covering the math and statistics behind topics like Computer Vision, NLP (Transformers,  BERT, etc), Reinforcement Learning, GANs, Variational Auto Encoders, Causality, etc. I have to say that it's being a great experience!!
 
 ### AI For Medical Diagnosis (Tensorflow)
