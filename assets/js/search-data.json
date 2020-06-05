@@ -105,6 +105,17 @@
 
   
       ,"page1": {
+          "title": "Contact Me",
+          "content": "We can keep in touch using the following channels: . Email: rubensilver@gmail.com . | Twitter: @eldarsilver . | Github: https://github.com/eldarsilver . | . &lt;img src=”images/ruben.jpg” &gt; .",
+          "url": "https://eldarsilver.github.io/ruben.martinez/_pages/Contact%20Me.html",
+          "relUrl": "/_pages/Contact%20Me.html",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page2": {
           "title": "About Me",
           "content": "Computer Engineer by Universidad Politécnica de Madrid (UPM) and Master in Data Science by Datahack. . | Certified in Robot Programming with Robot Operating System (ROS) (Universidad Rey Juan Carlos). . | Currently working as Data Scientist developing a research project deploying Deep Learning models in the Pepper robot using Tensorflow and ROS. . | Certified Ethical Hacker (CEH). . | Cloudera Developer Training for Apache Hadoop and Apache Spark, Intro to Big Data with Apache Spark (Databricks) and others. . | I’ve worked as security auditor as well as professor of the Postgraduate in Computer Security and Systems Hacking in the Polytechnic University School of Mataró. . | Co-author of Ra-Ma hacking books such as Hacking and Web Page Security (MundoHacker), Hacking and Internet Security Ed. 2011, etc. . | . Courses . Tokyo Data Science (https://tokyodatascience.com/) . Link to the Course Web Page . Currently, I’m taking this great course in which I’m covering the math and statistics behind topics like Computer Vision, NLP (Transformers, BERT, etc), Reinforcement Learning, GANs, Variational Auto Encoders, Causality, etc. I have to say that it’s being a great experience!! . AI For Medical Diagnosis (Tensorflow) . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . Data Pipelines with TensorFlow Data Services . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . Sequences, Time Series and Prediction (Tensorflow) . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . Natural Language Processing in TensorFlow . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . Convolutional Neural Networks in TensorFlow . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . Convolutional Neural Networks . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization . Offered by deeplearning.ai (Coursera) . Link to the Course Description . Link to the Course Certificate . UTQML101x: Quantum Machine Learning . Offered by University of Toronto (edX) . Link to the Course Description . Link to the Course Certificate . Serverless Machine Learning with Tensorflow on Google Cloud Platform . Offered by Google Cloud Training (Coursera) . Link to the Course Description . Link to the Course Certificate . Launching into Machine Learning on Google Cloud Platform . Offered by Google Cloud Training (Coursera) . Link to the Course Description . Link to the Course Certificate . Machine Learning Foundations: A Case Study Approach . Offered by University of Washington (Coursera) . Link to the Course Description . Link to the Course Certificate .",
           "url": "https://eldarsilver.github.io/ruben.martinez/about/",
@@ -115,7 +126,7 @@
   
 
   
-      ,"page2": {
+      ,"page3": {
           "title": "Conference Videos",
           "content": "In this section you can find videos of some conferences in which I have been speaker. . Bayesian Voice Emotion Detection Applied to Robotics . Conference: BigThings . Language: Spanish . Link to the description of the talk . Teaching a robot Guess Who? From Deep Learning to Brain Spikes . Conference: Big Data Spain . Language: English . Link to the description of the talk . Attacking Machine Learning used in AntiVirus with Reinforcement Learning . Conference: Big Data Spain . Language: English . Link to the description of the talk . Deep Learning aplicado a Robótica: Construye tu propio Bender . Description: In this talk given in the Google Campus Madrid, I showed how to combine Deep Learning Models with Robot Operating System (ROS) using the Kobuki robot. . Language: Spanish . Fraud detection using machine learning &amp; deep learning CyberCamp (INCIBE) . Conference: Cybercamp . Description: In this talk given in the CyberCamp Conference organized by INCIBE (Instituto Nacional de Ciberseguridad), I showed how to use Deep Learning models to detect bank transaction fraud. . Language: Spanish . Predicción de crímenes con Apache Spark - CyberCamp (INCIBE) . Conference: Cybercamp . Description: In this talk given in the CyberCamp Conference organized by INCIBE (Instituto Nacional de Ciberseguridad), I showed how to use ML models with Apache Spark to predict crimes. . Language: Spanish .",
           "url": "https://eldarsilver.github.io/ruben.martinez/_pages/conferences.html",
@@ -147,7 +158,7 @@
   
 
   
-      ,"page11": {
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://eldarsilver.github.io/ruben.martinez/robots.txt",
