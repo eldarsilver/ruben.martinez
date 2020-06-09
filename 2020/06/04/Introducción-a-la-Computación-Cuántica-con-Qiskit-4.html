@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 4 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 4" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica." />
+<meta property="og:description" content="En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:image" content="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-04T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 4","dateModified":"2020-06-04T00:00:00-05:00","datePublished":"2020-06-04T00:00:00-05:00","image":"https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg","url":"https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ruben.martinez/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" /><link rel="shortcut icon" type="image/x-icon" href="/ruben.martinez/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Introducción A La Computación Cuántica Con Qiskit 4 | Ruben Martínez Sánchez</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Introducción A La Computación Cuántica Con Qiskit 4" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica." />
+<meta property="og:description" content="En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica." />
+<link rel="canonical" href="https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html" />
+<meta property="og:url" content="https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html" />
+<meta property="og:site_name" content="Ruben Martínez Sánchez" />
+<meta property="og:image" content="https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-06-04T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica.","@type":"BlogPosting","headline":"Introducción A La Computación Cuántica Con Qiskit 4","dateModified":"2020-06-04T00:00:00-05:00","datePublished":"2020-06-04T00:00:00-05:00","image":"https://eldarsilver.github.io/ruben.martinez/images/qiskit.jpeg","url":"https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html","mainEntityOfPage":{"@type":"WebPage","@id":"https://eldarsilver.github.io/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://eldarsilver.github.io/ruben.martinez/feed.xml" title="Ruben Martínez Sánchez" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ruben.martinez/">Ruben Martínez Sánchez</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ruben.martinez/about/">About Me</a><a class="page-link" href="/ruben.martinez/_pages/conferences.html">Conference Videos</a><a class="page-link" href="/ruben.martinez/_pages/contactme.html">Contact</a><a class="page-link" href="/ruben.martinez/search/">Search</a><a class="page-link" href="/ruben.martinez/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Introducción A La Computación Cuántica Con Qiskit 4</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-06-04T00:00:00-05:00" itemprop="datePublished">
+        Jun 4, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>En el segundo artículo de esta serie se comentaba que las amplitudes de probabilidad son números complejos en contraposición con los números reales positivos que se emplean en Computación Clásica.</p>
+
+<h2 id="superposición-y-números-complejos">Superposición y números complejos</h2>
+
+<p>Los números complejos tiene la forma de a + bi donde ‘a’ es la <strong>parte real</strong> y ‘bi’ es la <strong>parte imaginaria</strong> siendo ‘a’ y ‘b’ números reales positivos o negativos e ‘i’ se corresponde con el número imaginario de forma que i = () (ya que no tenemos números reales que después de elevarlos al cuadrado sigan siendo negativos, por lo que no podremos volver hacia atrás haciendo la raíz cuadrada).</p>
+
+<p>Los números complejos permiten representar coordenadas en un plano de manera que la parte real se asociará al eje X y la parte imaginaria con el eje Y. Por lo que sumar en la parte real supondrá movernos hacia la derecha, restar en la parte real movernos hacia la izquierda, sumar en la parte imaginaria nos permitirá desplazarnos hacia arriba y restar en la parte imaginaria supondrá movernos hacia abajo en el plano.</p>
+
+<h4 id="suma--resta-de-números-complejos">Suma / Resta de Números Complejos</h4>
+
+<p>(7 + 3i) + (3 - 5i) = (10 -2i)</p>
+
+<h4 id="multiplicación-de-números-complejos">Multiplicación de Números Complejos</h4>
+
+<p>(7 + 3i) * (3 -5i) = 7 * 3 + 7 * (-5i) + 3i * 3 + 3i * (-5i) = 21 + (-35i) + 9i + (-15(i^{2})) = 21 -26i -15*(-1) = 36 - 26i</p>
+
+<p>La razón por la que (i^{2})simplifica a (-1) es porque i = () .</p>
+
+<h4 id="división-de-números-complejos">División de Números Complejos</h4>
+
+<p>Para realizar la división de números complejos hay que introducir el concepto de <strong>conjugada de números complejos,</strong> que consiste en cambiar el signo a la parte imaginaria. Por ejemplo la conjugada del número complejo (a + bi) será (a - bi). Multiplicar un número complejo por su conjugada supone que los términos centrales se cancelan:</p>
+
+<p>(a + bi) * (a - bi) = (a^{2}\  - abi\  + \ abi\  - {(bi)}^{2})</p>
+
+<p>Para realizar la división de números complejos multiplicaremos al numerador y al denominador por la conjugada del denominador:</p>
+
+<p>(7 + 3i) / (3 - 5i) = ((7 + 3i) * (3 + 5i)) / ((3 - 5i) * (3 + 5i))</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Para comprobar la utilidad de emplear números complejos vamos a realizar un circuito cuántico que aplique una rotación ‘<strong>ry</strong>’ de 90º pero ahora al ket</td>
+      <td>1&gt;.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Hemos visto que todo qubit comienza inicializado en el estado ket</td>
+      <td>0&gt; por lo que tendremos que aplicar la puerta cuántica ‘<strong>x</strong>’ (que se correspondería con una puerta lógica NOT) sobre el qubit para que pase a estar en estado</td>
+      <td>1&gt;.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>La puerta cuántica ‘x’ se corresponderá con la matriz:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image6.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Una vez que el qubit se encuentre en el</td>
+      <td>1&gt; aplicaremos la puerta ‘ry’ con un ángulo de 90º para realizar dicha rotación:</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image3.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>En el tercer artículo de esta serie se aplicó la puerta ‘x’ sobre el qubit en el estado</td>
+      <td>0&gt; y el resultado fue:</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image5.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Se puede comprobar que cuando se aplica la rotación ‘ry’ sobre el ket</td>
+      <td>1&gt; el resultado es similar al anterior pero con signo opuesto, por lo que tendremos una amplitud de probabilidad negativa. El estado obtenido será:</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image1.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>La utilidad de disponer de números complejos para representar las amplitudes de probabilidad de los estados cuánticos se hace patente cuando se comprueba que el signo negativo del ket</td>
+      <td>0&gt; anterior no puede observarse al realizar la medición de las estadísticas de la ejecución del circuito cuántico. Para obtener dichas estadísticas de las frecuencias de cada resultado se ha empleado el backend ‘qasm_simulator’:</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image4.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Se puede comprobar que prácticamente se han producido el mismo número de caras (‘0s’) que de cruces (‘1s’). La utilización de números complejos permite modelar un fenómeno de mecánica cuántica conocido como ‘<strong>interferencia</strong>’ según el cual las amplitudes de probabilidad puede interactuar unas veces constructiva y otras destructivamente. Una forma de comprobarlo es aplicar sobre un qubit en el estado</td>
+      <td>0&gt; dos rotaciones ‘ry’ consecutivas de 90º. Al realizarlo obtendremos el ket</td>
+      <td>1&gt; aunque durante el proceso hubo cierta superposición.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>El código para realizar este experimento en el que se realizarán 50 ejecuciones del circuito cuántico sobre el backend ‘qasm_simulator’ y se obtendrá el histograma de los resultados es el siguiente:</p>
+
+<p><img src="https://eldarsilver.github.io/ruben.martinez/assets/img/2020-06-04-Introducción-a-la-Computación-Cuántica-con-Qiskit-4/media/image2.png" alt="" /> ()</p>
+
+<p>En próximos artículos seguiremos avanzando tratando más propiedades presentes en mecánica cuántica como por ejemplo el <strong>‘Entanglement’</strong> y viendo cómo implementarlas empleando el framework Qiskit. ¡Os esperamos!</p>
+
+  </div><a class="u-url" href="/ruben.martinez/2020/06/04/Introducci%C3%B3n-a-la-Computaci%C3%B3n-Cu%C3%A1ntica-con-Qiskit-4.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ruben.martinez/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ruben.martinez/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Causal Inference / AI / Robotics / Neuroscience / Quantum Adventures! Let&#39;s share!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/eldarsilver" title="eldarsilver"><svg class="svg-icon grey"><use xlink:href="/ruben.martinez/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
